@@ -50,8 +50,8 @@ body{
 }
 
 img {
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
     margin:0;
 }
 
@@ -84,7 +84,7 @@ a:hover {
 }
 
 .contenu {
-    height:60rem;
+    height:36rem;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
