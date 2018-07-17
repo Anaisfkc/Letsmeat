@@ -6,7 +6,7 @@ body{
     background-size: cover;
     font-family: 'Glass Antiqua', cursive;
     font-size: 1.2rem;
-    margin: 2rem 17rem;
+    margin:0 10rem 0;
 }
 
 .headerrow {
@@ -17,10 +17,12 @@ body{
     background-color: #d86400;
     color:white;
     font-size: 1.2rem;
+    border-radius: 1rem;
 }
 
 .dropdown-menu {
     background-color: #ffc44d;
+    border-radius: 1rem;
 }
 
 .dropdown-item {
@@ -31,7 +33,7 @@ body{
 }
 
 .dropdown-item:hover{
-    font-size:1.3rem;
+    font-size:1.5rem;
     background-color: #d86400;
 }
 
@@ -43,9 +45,14 @@ body{
     color:white;
 }
 
+.divImg {
+    margin-right: 8rem;
+}
+
 img {
     width: 12rem;
     height: 12rem;
+    margin:0;
 }
 
 h1{
@@ -55,10 +62,18 @@ h1{
     font-size: 5rem;
 }
 
+.inscription {
+    margin-right: 2rem;
+}
+
 .login {
     text-align: center;
 }
 
+.ulLogin {
+    float: right;
+    margin: 3rem 0 0 0;
+}
 a{
     color: #d86400;
 }
@@ -69,7 +84,7 @@ a:hover {
 }
 
 .contenu {
-    margin-top: 8rem;
+    height:60rem;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
@@ -78,6 +93,7 @@ a:hover {
 
 .nav-link{
     margin-bottom: 5rem;
+    color:#d86400;
 }
 
 .nav-link:hover {
@@ -88,11 +104,75 @@ a:hover {
     background-color:#d86400;
 }
 
-.col-10{
-    border-left: solid 0.1rem #d86400;
+.footer {
+    border-top: solid 0.1rem #d86400;
+}
+
+.piedPage {
+    margin-top:2rem;
 }
 
 .copyR{
     color: #d86400;
-    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.slide-in-out 
+{
+    text-decoration:none;
+    color:#d86400;
+    display: inline-block;
+    position: relative; /* prepare the position for sliding in and out */
+}
+/* add a empty string before the elment with class .slide-in-out  */
+.slide-in-out:before 
+{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    transition: width 0s ease, background-color .2s ease;
+    -webkit-transition: width 0s ease, background-color .2s ease;
+    -moz-transition: width 0s ease, background-color .2s ease;
+     
+    /* position the content to the left bottom corner of the parent element to make it to slide in from left to right on hover */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+/* add a empty string after the elment with class .slide-in-out  */
+.slide-in-out:after 
+{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: #d86400;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease, background-color .2s ease;
+    -moz-transition: width .2s ease, background-color .2s ease;
+     
+    /* position the content to the left bottom corner of the parent element to make it to slide out from left to right on hover */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+ 
+/* Change the width and background on hover, aka sliding in and out */
+.slide-in-out:hover:before 
+{
+    width: 100%;
+    background: #d86400;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+    -moz-transition: width .2s ease;
+}
+.slide-in-out:hover:after 
+{
+    width: 100%;
+    background: transparent;
+    transition: all 0s ease;
+    -webkit-transition: width 0s ease;
+    -moz-transition: width .0s ease;
 }
