@@ -3,10 +3,73 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link rel="stylesheet" href="../public/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <header class="headerrow">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="../public/img/43684e3d-542c-4ea3-b383-dadb1cf47f0d.png" alt="logo">
+                    </div>
+                    <div class="col-3">
+                        <div class="dropdown">
+                            <button class="btn btnmenu btn-lg btn-block" type="button" id="dropdownMenu2" aria-haspopup="true" aria-expanded="false">Menu</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="menu">
+                                <button class="dropdown-item" type="button" id="menu1">Proposer/Réserver</button>
+                                <button class="dropdown-item" type="button" id="menu2">Qu'est ce que "Let's M'eat "</button>
+                                <button class="dropdown-item" type="button" id="menu3">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7 login">
+                        <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-home-tab" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </main>
+
+        <footer class="depage">
+            <div class="container">
+                <div class="row contenu">
+                    <div class="col-8">
+                        <ul class="nav justify-content-center nav-fill">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">CGU</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Politique de confidentialité</a>
+                            </li>
+                            <li>
+                                <p class="copyR">© 2018 Let's M'eat Company.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>            
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="../public/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>                
     </body>
 </html>
