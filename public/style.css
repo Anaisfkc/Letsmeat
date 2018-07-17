@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Glass+Antiqua|Petrona|Arima+Madurai|Dosis|Josefin+Slab|');
-/* @font-face {
+@font-face {
     font-family: TrackItalic;
     src: url(webfonts/TrackItalic/TrackItalic.eot);
     src: local("☺"),url(webfonts/TrackItalic/TrackItalic.woff) format("woff"),url(webfonts/TrackItalic/TrackItalic.ttf) format("truetype"),url(webfonts/TrackItalic/TrackItalic.svg) format("svg");
     font-weight: 400;
     font-style: normal
-}; */
+};
 
 body{
     background-color: #ffc44d;
