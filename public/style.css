@@ -8,12 +8,12 @@
 }; */
 
 body{
-    background-color: #fcb422c4;
+    background-color: #ffc44d;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Glass Antiqua', cursive;
     font-size: 1.2rem;
-    margin: 2rem 5rem;
+    margin: 2rem 17rem;
 }
 
 .headerrow {
@@ -27,11 +27,11 @@ body{
 }
 
 .dropdown-menu {
-    background-color:#fcb422c4
+    background-color: #ffc44d;
 }
 
 .dropdown-item {
-    background-color:#fcb422c4;
+    background-color: #ffc44d;
     border-bottom: solid 0.1rem #8a4500;
     color:white;
     font-size: 1.5rem;
@@ -43,7 +43,7 @@ body{
 }
 
 .dropdown-item:focus {
-    background-color: #fcb422c4;
+    background-color: #ffc44d;
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
