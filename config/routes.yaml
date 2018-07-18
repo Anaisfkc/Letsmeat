@@ -18,9 +18,9 @@ profil:
   path: /profil
   controller: App\Controller\DefaultController::profil
 
-retrouveramiss:
-  path: /retrouveramiss
-  controller: App\Controller\DefaultController::retrouveramiss
+retrouveramis:
+  path: /retrouveramis
+  controller: App\Controller\DefaultController::retrouveramis
 
 contact:
   path: /contact
