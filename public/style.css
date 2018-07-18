@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Glass+Antiqua|Petrona|Arima+Madurai|Dosis|Josefin+Slab|');
 
+@font-face {
+    font-family: 'Track';
+    src: url(font/Track-Italic/TTF\ files/Track.ttf);
+}
+
 body{
-    background-color: #ffc44d;
+    background-image: url(../public/img/food2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Glass Antiqua', cursive;
-    font-size: 1.2rem;
+    /* font-family: 'Track' ; */
+    font-family: 'Arima Madurai';
+    font-size: 1rem;
     margin:0 10rem 0;
 }
 
 .headerrow {
-    border-bottom: solid 0.1rem #d86400;
+    border-bottom: solid 0.05rem #d86400;
 }
 
 .btnmenu{
@@ -20,25 +26,30 @@ body{
     border-radius: 1rem;
 }
 
+.btnmenu:hover {
+    width:110%;
+    font-size:1.4rem;
+}
+
 .dropdown-menu {
-    background-color: #ffc44d;
+    background-color: #fde560;
     border-radius: 1rem;
 }
 
 .dropdown-item {
-    background-color: #ffc44d;
-    border-bottom: solid 0.1rem #d86400;
+    background-color: #fde560;
+    border-bottom: solid 0.05rem #d86400;
     color:white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .dropdown-item:hover{
-    font-size:1.5rem;
+    font-size:1.rem;
     background-color: #d86400;
 }
 
 .dropdown-item:focus {
-    background-color: #ffc44d;
+    background-color: #fde560;
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
@@ -84,7 +95,7 @@ a:hover {
 }
 
 .contenu {
-    height:36rem;
+    height: 42rem;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
@@ -105,11 +116,12 @@ a:hover {
 }
 
 .footer {
-    border-top: solid 0.1rem #d86400;
+    border-top: solid 0.05rem #d86400;
 }
 
 .piedPage {
     margin-top:2rem;
+    margin-bottom:-1rem;
 }
 
 .copyR{
