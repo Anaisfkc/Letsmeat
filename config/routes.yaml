@@ -6,21 +6,21 @@ accueil:
   path: /accueil
   controller: App\Controller\DefaultController::accueil
 
-letsmeat_concept:
-  path: /letsmeat_concept
-  controller: App\Controller\DefaultController::letsmeat_concept
+concept:
+  path: /letsmeatconcept
+  controller: App\Controller\DefaultController::concept
 
-proposerreserver:
+proporeserv:
   path: /proposerreserver
-  controller: App\Controller\DefaultController::proposerreserver
+  controller: App\Controller\DefaultController::proporeserv
 
 profil:
   path: /profil
   controller: App\Controller\DefaultController::profil
 
-retrouveramis:
+amis:
   path: /retrouveramis
-  controller: App\Controller\DefaultController::retrouveramis
+  controller: App\Controller\DefaultController::amis
 
 contact:
   path: /contact
