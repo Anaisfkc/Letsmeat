@@ -16,11 +16,11 @@ body{
 }
 
 .headerrow {
-    border-bottom: solid 0.05rem #d86400;
+    border-bottom: solid 0.05rem #9aaf00;
 }
 
 .btnmenu{
-    background-color: #d86400;
+    background-color: #9aaf00;
     color:white;
     font-size: 1.2rem;
     border-radius: 1rem;
@@ -38,14 +38,14 @@ body{
 
 .dropdown-item {
     background-color: #fde560;
-    border-bottom: solid 0.05rem #d86400;
+    border-bottom: solid 0.05rem #9aaf00;
     color:white;
     font-size: 1.2rem;
 }
 
 .dropdown-item:hover{
     font-size:1.rem;
-    background-color: #d86400;
+    background-color: #9aaf00;
 }
 
 .dropdown-item:focus {
@@ -67,7 +67,7 @@ img {
 }
 
 h1{
-    color: #d86400;
+    color: #9aaf00;
     text-align: center;
     text-shadow: 3px 3px 3px white;
     font-size: 5rem;
@@ -86,7 +86,7 @@ h1{
     margin: 3rem 0 0 0;
 }
 a{
-    color: #d86400;
+    color: #9aaf00;
 }
 
 a:hover {
@@ -99,12 +99,12 @@ a:hover {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    background-color: #d86400;
+    background-color: #9aaf00;
 }
 
 .nav-link{
     margin-bottom: 5rem;
-    color:#d86400;
+    color:#9aaf00;
 }
 
 .nav-link:hover {
@@ -112,11 +112,11 @@ a:hover {
 }
 
 .navhead:hover {
-    background-color:#d86400;
+    background-color:#9aaf00;
 }
 
 .footer {
-    border-top: solid 0.05rem #d86400;
+    border-top: solid 0.05rem #9aaf00;
 }
 
 .piedPage {
@@ -125,7 +125,7 @@ a:hover {
 }
 
 .copyR{
-    color: #d86400;
+    color: #9aaf00;
     text-align: center;
     font-size: 0.8rem;
 }
@@ -133,7 +133,7 @@ a:hover {
 .slide-in-out 
 {
     text-decoration:none;
-    color:#d86400;
+    color:#9aaf00;
     display: inline-block;
     position: relative; /* prepare the position for sliding in and out */
 }
@@ -160,7 +160,7 @@ a:hover {
     display: block;
     height: 3px;
     width: 0;
-    background: #d86400;
+    background: #9aaf00;
     transition: width .2s ease;
     -webkit-transition: width .2s ease, background-color .2s ease;
     -moz-transition: width .2s ease, background-color .2s ease;
@@ -175,7 +175,7 @@ a:hover {
 .slide-in-out:hover:before 
 {
     width: 100%;
-    background: #d86400;
+    background: #9aaf00;
     transition: width .2s ease;
     -webkit-transition: width .2s ease;
     -moz-transition: width .2s ease;
