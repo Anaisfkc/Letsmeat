@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Glass+Antiqua|Petrona|Arima+Madurai|Dosis|Josefin+Slab|');
+
+body{
+    background-color: #fcb422;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Glass Antiqua', cursive;
+    font-size: 1.2rem;
+    margin: 2rem 5rem;
+}
+
+.headerrow {
+    border-bottom: solid 0.1rem #8a4500;
+}
+
+.btnmenu{
+    background-color: #8a4500;
+    color:white;
+    font-size: 1.2rem;
+}
+
+.dropdown-menu {
+    background-color:#fcb422
+}
+
+.dropdown-item {
+    background-color:#fcb422;
+    border-bottom: solid 0.1rem #8a4500;
+    color:white;
+    font-size: 1.5rem;
+}
+
+.dropdown-item:hover{
+    font-size:1.3rem;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #8a4500;
+    color:white;
+}
+
+img {
+    width: 8rem; height: 8rem;
+}
+
+h1{
+    color: #8a4500;
+    text-align: center;
+    text-shadow: 3px 3px 3px white;
+    font-size: 5rem;
+}
+
+.login {
+    text-align: center;
+}
+
+a{
+    color: #8a4500;
+}
+
+a:hover {
+    color:#ffff;
+}
+
+/* .dropdown-item {
+    display:none;
+} */
+
+.contenu {
+    margin-top: 8rem;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #8a4500;
+}
+
+.nav-link{
+    margin-bottom: 5rem;
+}
+
+.nav-link:hover {
+    font-size: 1.3rem;
+    background-color:#8a4500;    
+}
+
+.col-10{
+    border-left: solid 0.1rem #8a4500;
+}
+
+.copyR{
+    color: #8a4500;
+    font-weight: bold;
+}
