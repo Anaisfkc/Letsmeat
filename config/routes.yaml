@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
@@ -24,4 +25,32 @@ amis:
 
 contact:
   path: /contact
+=======
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+accueil:
+  path: /accueil
+  controller: App\Controller\DefaultController::accueil
+
+concept:
+  path: /leconcept
+  controller: App\Controller\DefaultController::concept
+
+proporeserv:
+  path: /proposer/reserver
+  controller: App\Controller\DefaultController::proporeserv
+
+profil:
+  path: /profil
+  controller: App\Controller\DefaultController::profil
+
+amis:
+  path: /rencontrer
+  controller: App\Controller\DefaultController::amis
+
+contact:
+  path: /contact
+>>>>>>> f0a54d252568baef7cd5fb833ec4d20975b2d5e3
   controller: App\Controller\DefaultController::contact
