@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Preferences;
+use App\Entity\Profil;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Preferences|null find($id, $lockMode = null, $lockVersion = null)
- * @method Preferences|null findOneBy(array $criteria, array $orderBy = null)
- * @method Preferences[]    findAll()
- * @method Preferences[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Profil|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Profil|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Profil[]    findAll()
+ * @method Profil[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PreferencesRepository extends ServiceEntityRepository
+class ProfilRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Preferences::class);
+        parent::__construct($registry, Profil::class);
     }
 
 //    /**
-//     * @return Preferences[] Returns an array of Preferences objects
+//     * @return Profil[] Returns an array of Profil objects
 //     */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class PreferencesRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Preferences
+    public function findOneBySomeField($value): ?Profil
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')

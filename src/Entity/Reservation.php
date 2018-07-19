@@ -23,7 +23,6 @@ class Reservation
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
      */
     private $user;
 
@@ -49,7 +48,7 @@ class Reservation
         return $this->user;
     }
 
-    public function setUser(User $user): self
+    public function setUser(?User $user): self
     {
         $this->user = $user;
 
