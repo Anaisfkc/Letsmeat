@@ -13,6 +13,7 @@ body{
     font-family: 'Arima Madurai';
     font-size: 1rem;
     margin:0 10rem 0;
+    font-weight: bold;
 }
 
 .headerrow {
@@ -24,6 +25,7 @@ body{
     color:white;
     font-size: 1.2rem;
     border-radius: 1rem;
+    font-weight: bold;
 }
 
 .btnmenu:hover {
@@ -41,6 +43,7 @@ body{
     border-bottom: solid 0.05rem #9aaf00;
     color:white;
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .dropdown-item:hover{
@@ -98,7 +101,11 @@ main {
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2), 6px 6px 20px 10px rgba(0, 0, 0, 0.19);
     text-align: center;
     border-radius: 0.5rem;
-    height: 42rem;
+    height: 40rem;
+}
+
+.contenu {
+    border-radius:1rem;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {

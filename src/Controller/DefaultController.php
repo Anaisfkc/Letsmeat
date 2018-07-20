@@ -17,27 +17,38 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/home", name="accueil")
+     */
     public function accueil() {
         return $this->render('default/accueil.html.twig');
     }
 
+    /**
+     * @Route("/cgu", name="cgu")
+     */
+    public function cgu() {
+        return $this->render('default/cgu.html.twig');
+    }
+
+    /**
+     * @Route("/concept", name="concept")
+     */
     public function concept() {
         return $this->render('default/concept.html.twig');
     }
 
-    public function proporeserv() {
-        return $this->render('default/proporeserv.html.twig');
-    }
-
-    public function profil() {
-        return $this->render('default/profil.html.twig');
-    }
-
-    public function amis() {
-        return $this->render('default/amis.html.twig');
-    }
-
+    /**
+     * @Route("/contact", name="contact")
+     */
     public function contact() {
         return $this->render('default/contact.html.twig');
+    }
+
+    /**
+     * @Route("/politique-confidentialite", name="politiqueconfidential")
+     */
+    public function politiqueconfidential() {
+        return $this->render('default/politiqueconfidential.html.twig');
     }
 }

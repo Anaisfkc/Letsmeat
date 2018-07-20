@@ -1,5 +1,14 @@
+main {
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2), 6px 6px 20px 10px rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 0.5rem;
+    height: 40rem;
+    background:transparent;
+    background: rgba(250, 226, 84, 0.9);
+}
+
 h2 {
-    color: #9aaf00;
+    color: #425100;
     text-align: center;
     text-shadow: 3px 3px 3px white;
     font-size: 2rem;   
