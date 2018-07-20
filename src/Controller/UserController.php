@@ -40,7 +40,7 @@ class UserController extends Controller
             return $this->redirectToRoute('user_index');
         }
 
-        return $this->render('user/new.html.twig', [
+        return $this->render('user/inscription.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);

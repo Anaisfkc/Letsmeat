@@ -13,3 +13,7 @@ concept:
 contact:
   path: /contact
   controller: App\Controller\DefaultController::contact
+
+cgu:
+  path: /cgu
+  controller: App\Controller\DefaultController::cgu

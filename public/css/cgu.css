@@ -7,8 +7,34 @@ main {
     text-align: left;
 }
 
+.conf {
+    padding-left: 5rem;
+    color: #425100;
+    margin: 0;
+}
+
+h2, h3{
+    padding-left: 5rem;
+    color: #323d01;
+    margin: 0;
+}
+
+h5{
+    font-weight: Bold;
+    text-decoration: underline;
+    padding-left: 5rem;
+    color: #323d01;
+    margin: 0;
+}
+
 p {
     padding-left: 5rem;
     color: #425100;
     margin: 0;
+}
+
+#moteur{
+    Font-Weight: Bold;
+    color: #323d01;
+    text-decoration: underline;
 }

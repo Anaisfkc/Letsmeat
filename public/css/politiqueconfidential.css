@@ -1,14 +1,17 @@
 main {
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2), 6px 6px 20px 10px rgba(0, 0, 0, 0.19);
-    text-align: center;
+    text-align: left;
     border-radius: 0.5rem;
     height: auto;
     background-color:rgba(250, 226, 84, 0.9); /*#f9e259f2*/
-    text-align: left;
 }
 
-p {
+.conf {
     padding-left: 5rem;
     color: #425100;
     margin: 0;
+}
+
+h2 {
+    text-align :center;
 }
