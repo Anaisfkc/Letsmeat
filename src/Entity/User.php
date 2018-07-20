@@ -86,6 +86,8 @@ class User
      */
     private $profil;
 
+    
+
     public function getId()
     {
         return $this->id;
@@ -95,6 +97,7 @@ class User
     {
         return $this->prenom;
     }
+
 
     public function setPrenom(string $prenom): self
     {

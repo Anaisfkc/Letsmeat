@@ -15,17 +15,18 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-2 divImg">
-                        <a href="http://"><img src="{{ asset('img/logobv.png') }}" alt="logo"></a>
+                        <a href="/"><img src="{{ asset('img/logobv.png') }}" alt="logo"></a>
                     </div>
                     <div class="col-6">
                         <div class="dropdown">
                             <button class="btn btnmenu btn-lg btn-block" type="button" id="dropdownMenu2" aria-haspopup="true" aria-expanded="false" style="margin: 3rem 0 0 0;">Menu</button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="menu">
-                                <a href="http://"><button class="dropdown-item" type="button" id="menu1">Découvrir le concept "Let's M'eat"</button></a>
-                                <a href="http://"><button class="dropdown-item" type="button" id="menu2">Proposer/Réserver</button></a>
-                                <a href="http://"><button class="dropdown-item" type="button" id="menu3">Profil</button></a>
-                                <a href="http://"><button class="dropdown-item" type="button" id="menu4">Retrouver des amis</button></a>
-                                <a href="http://"><button class="dropdown-item" type="button" id="menu5">Contact</button></a>
+                                <a href="/"><button class="dropdown-item" type="button" id="menu1">Accueil</button></a>
+                                <a href="/concept"><button class="dropdown-item" type="button" id="menu1">Découvrir le concept "Let's M'eat"</button></a>
+                                <a href="/propositions"><button class="dropdown-item" type="button" id="menu2">Proposer/Réserver</button></a>
+                                <a href="profil/voir-profil"><button class="dropdown-item" type="button" id="menu3">Profil</button></a>
+                                <a href="profil/retrouver-des-amis"><button class="dropdown-item" type="button" id="menu4">Retrouver des amis</button></a>
+                                <a href="/contact"><button class="dropdown-item" type="button" id="menu5">Contact</button></a>
                             </div>
                         </div>
                     </div>
@@ -33,10 +34,10 @@
                     <div class="col-3 login slidediv">
                         <ul class="nav nav-pills nav-fill ulLogin" id="pills-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link slide-in-out" id="pills-home-tab" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
+                                <a class="nav-link slide-in-out" id="pills-home-tab" href="user/inscription" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link slide-in-out" id="pills-profile-tab" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
+                                <a class="nav-link slide-in-out" id="pills-profile-tab" href="profil/login" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
                             </li>
                         </ul>
                     </div>
@@ -65,10 +66,10 @@
                                 <a class="nav-link active slide-in-out" href="#"><i class="fab fa-instagram"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link slide-in-out" href="#">CGU</a>
+                                <a class="nav-link slide-in-out" href="/cgu">CGU</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link slide-in-out" href="/default/politiqueconfidential.html.twig">Politique de confidentialité</a>
+                                <a class="nav-link slide-in-out" href="/politique-confidentialite">Politique de confidentialité</a>
                             </li>
                         </ul>
                     </div>

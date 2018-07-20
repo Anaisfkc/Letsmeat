@@ -24,7 +24,7 @@ class ProfilController extends Controller
     }
 
     /**
-     * @Route("/new", name="profil_new", methods="GET|POST")
+     * @Route("/creer-profil", name="profil_creer", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
@@ -40,11 +40,14 @@ class ProfilController extends Controller
             return $this->redirectToRoute('profil_index');
         }
 
-        return $this->render('creerprofil.html.twig', [
+        return $this->render('profil/creerprofil.html.twig', [
             'profil' => $profil,
             'form' => $form->createView(),
         ]);
     }
+
+
+
 
     /**
      * @Route("/{id}", name="profil_show", methods="GET")

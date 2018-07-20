@@ -24,8 +24,8 @@ class UserType extends AbstractType
             ->add('adresse')
             ->add('ville')
             ->add('cp')
-            ->add('proposition')
-            ->add('profil')
+            // ->add('proposition')
+            // ->add('profil')
         ;
     }
 

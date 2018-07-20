@@ -24,7 +24,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/new", name="user_new", methods="GET|POST")
+     * @Route("/inscription", name="user_inscription", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
@@ -37,7 +37,7 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('user_index');
+            return $this->redirectToRoute('profil_creer');
         }
 
         return $this->render('user/inscription.html.twig', [

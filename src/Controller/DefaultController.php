@@ -18,7 +18,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/home", name="accueil")
+     * @Route("/", name="accueil")
      */
     public function accueil() {
         return $this->render('default/accueil.html.twig');

@@ -5,3 +5,12 @@
 politiqueconfidential:
   path: /politique-confidentialite
   controller: App\Controller\DefaultController::politiqueconfidential
+
+# inscription:
+#   path: /inscription
+#   controller: App\Controller\UserController::inscription
+#   methods: [GET, POST]
+
+creerprofil:
+  path: /creer-profil
+  controller: App\Controller\ProfilController::creerprofil
