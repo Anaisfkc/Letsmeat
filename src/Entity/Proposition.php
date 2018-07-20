@@ -24,22 +24,22 @@ class Proposition
     private $titre;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $contenu;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $dateHeure;
+    private $datetime;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=30)
      */
-    private $nbDispo;
+    private $nbdispo;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="propositions")
+     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="proposition")
      */
     private $user;
 
@@ -77,26 +77,26 @@ class Proposition
         return $this;
     }
 
-    public function getDateHeure(): ?\DateTimeInterface
+    public function getDatetime(): ?\DateTimeInterface
     {
-        return $this->dateHeure;
+        return $this->datetime;
     }
 
-    public function setDateHeure(\DateTimeInterface $dateHeure): self
+    public function setDatetime(\DateTimeInterface $datetime): self
     {
-        $this->dateHeure = $dateHeure;
+        $this->datetime = $datetime;
 
         return $this;
     }
 
-    public function getNbDispo(): ?string
+    public function getNbdispo(): ?string
     {
-        return $this->nbDispo;
+        return $this->nbdispo;
     }
 
-    public function setNbDispo(string $nbDispo): self
+    public function setNbdispo(string $nbdispo): self
     {
-        $this->nbDispo = $nbDispo;
+        $this->nbdispo = $nbdispo;
 
         return $this;
     }
@@ -113,7 +113,7 @@ class Proposition
     {
         if (!$this->user->contains($user)) {
             $this->user[] = $user;
-            $user->setPropositions($this);
+            $user->setProposition($this);
         }
 
         return $this;
@@ -124,8 +124,8 @@ class Proposition
         if ($this->user->contains($user)) {
             $this->user->removeElement($user);
             // set the owning side to null (unless already changed)
-            if ($user->getPropositions() === $this) {
-                $user->setPropositions(null);
+            if ($user->getProposition() === $this) {
+                $user->setProposition(null);
             }
         }
 

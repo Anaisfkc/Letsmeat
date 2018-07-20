@@ -54,7 +54,12 @@ class User
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $mdpConfirm;
+    private $mdpconfirm;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $phone;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -72,19 +77,14 @@ class User
     private $cp;
 
     /**
-     * @ORM\Column(type="string", length=20)
-     */
-    private $phone;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Proposition", inversedBy="user")
      */
-    private $propositions;
+    private $proposition;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Preferences", mappedBy="user", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Profil", mappedBy="user", cascade={"persist", "remove"})
      */
-    private $preferences;
+    private $profil;
 
     public function getId()
     {
@@ -175,14 +175,26 @@ class User
         return $this;
     }
 
-    public function getMdpConfirm(): ?string
+    public function getMdpconfirm(): ?string
     {
-        return $this->mdpConfirm;
+        return $this->mdpconfirm;
     }
 
-    public function setMdpConfirm(string $mdpConfirm): self
+    public function setMdpconfirm(string $mdpconfirm): self
     {
-        $this->mdpConfirm = $mdpConfirm;
+        $this->mdpconfirm = $mdpconfirm;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
 
         return $this;
     }
@@ -223,42 +235,30 @@ class User
         return $this;
     }
 
-    public function getPhone(): ?string
+    public function getProposition(): ?Proposition
     {
-        return $this->phone;
+        return $this->proposition;
     }
 
-    public function setPhone(string $phone): self
+    public function setProposition(?Proposition $proposition): self
     {
-        $this->phone = $phone;
+        $this->proposition = $proposition;
 
         return $this;
     }
 
-    public function getPropositions(): ?Proposition
+    public function getProfil(): ?Profil
     {
-        return $this->propositions;
+        return $this->profil;
     }
 
-    public function setPropositions(?Proposition $propositions): self
+    public function setProfil(Profil $profil): self
     {
-        $this->propositions = $propositions;
-
-        return $this;
-    }
-
-    public function getPreferences(): ?Preferences
-    {
-        return $this->preferences;
-    }
-
-    public function setPreferences(Preferences $preferences): self
-    {
-        $this->preferences = $preferences;
+        $this->profil = $profil;
 
         // set the owning side of the relation if necessary
-        if ($this !== $preferences->getUser()) {
-            $preferences->setUser($this);
+        if ($this !== $profil->getUser()) {
+            $profil->setUser($this);
         }
 
         return $this;
