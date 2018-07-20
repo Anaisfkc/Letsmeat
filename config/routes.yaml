@@ -5,3 +5,11 @@
 politiqueconfidential:
   path: /politique-confidentialite
   controller: App\Controller\DefaultController::politiqueconfidential
+
+concept:
+  path: /concept
+  controller: App\Controller\DefaultController::concept
+
+contact:
+  path: /contact
+  controller: App\Controller\DefaultController::contact
