@@ -10,8 +10,10 @@ main {
     padding-left: 5rem;
     color: #425100;
     margin: 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
-h2 {
-    text-align :center;
+h4 {
+    font-weight: bold;
 }

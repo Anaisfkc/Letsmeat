@@ -17,32 +17,44 @@ class Profil
     private $id;
 
     /**
+     * @var boolean
+     * 
      * @ORM\Column(type="string", length=1)
      */
     private $saveurs;
 
     /**
+     * @var boolean
+     * 
      * @ORM\Column(type="string", length=1)
      */
     private $pratiquefood;
 
     /**
+     * @var boolean
+     * 
      * @ORM\Column(type="string", length=1)
      */
     private $prescriptionfood;
 
     /**
+     * @var boolean
+     * 
      * @ORM\Column(type="string", length=1)
      */
     private $typefood;
 
     /**
+     * @var boolean
+     * 
      * @ORM\Column(type="string", length=1)
      */
     private $recette;
 
     /**
-     * @ORM\Column(type="string", length=1, nullable=true)
+     * @var boolean
+     * 
+     * @ORM\Column(type="string", length=1)
      */
     private $intolerance;
 

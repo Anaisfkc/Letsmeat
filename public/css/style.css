@@ -33,6 +33,13 @@ body{
     font-size:1.4rem;
 }
 
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+}
+
 .dropdown-menu {
     background-color: #fde560;
     border-radius: 1rem;
@@ -88,6 +95,7 @@ img {
     float: right;
     margin: 3rem 0 0 0;
 }
+
 a{
     color: #9aaf00;
 }

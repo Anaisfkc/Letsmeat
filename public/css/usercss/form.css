@@ -1,0 +1,55 @@
+label[for="user_genre_0"] {
+    padding-right:2rem;
+}
+
+p{
+    font-size:0.8rem;
+    font-weight:normal;
+}
+
+select {
+    /* border-radius:0.25rem;
+    border:1px solid #ced4da;
+    color:#495057; */
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+button,
+.btn,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.btnuser{
+    background-color: #9aaf00;
+    color:white;
+    font-size: 1rem;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+li, #errorbirthdate {
+    font-size : 0.9rem;
+    font-weight: normal;
+    list-style: none;
+}
+
+li:before {
+    content: "* " 
+}
+
+span {
+    font-size : 0.9rem;
+    font-weight: normal; 
+}
+ 
