@@ -7,8 +7,27 @@ main {
     text-align: left;
 }
 
-p {
+.contenu {
     padding-left: 5rem;
+    padding-right: 5rem;
     color: #425100;
     margin: 0;
+}
+
+h2{
+    padding-left: 5rem;
+    color: #323d01;
+    margin: 0;
+}
+
+#emailHelp{
+    color: #323d01;  
+}
+
+#FormControlInput1{
+    color: #425100;  
+}
+
+#mail{
+    color: #323d01;
 }
