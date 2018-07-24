@@ -13,26 +13,3 @@ main {
     color: #425100;
     margin: 0;
 }
-
-h2{
-    padding-left: 5rem;
-    color: #323d01;
-    margin: 0;
-}
-
-form{
-    padding-left: 5rem;
-    color: #323d01;
-}
-
-.vert{
-    color: #425100;
-}
-
-#mail{
-    color: #323d01;
-}
-
-#textarea1{
-    resize:none;
-}
