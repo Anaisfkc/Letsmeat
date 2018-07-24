@@ -3,7 +3,8 @@ main {
     text-align: left;
     border-radius: 0.5rem;
     height: auto;
-    background-color:rgba(250, 226, 84, 0.9); /*#f9e259f2*/
+    background-color: rgba(250, 226, 84, 0.9);
+    /*#f9e259f2*/
 }
 
 .contenu {
@@ -16,4 +17,13 @@ main {
 
 h4 {
     font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+    .contenu {
+        padding: 2rem 1rem 2rem 1rem;
+    }
+    h4 {
+        font-size: 1.3rem;
+    }
 }

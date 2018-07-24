@@ -1,0 +1,33 @@
+main {
+    height: 50rem;
+    padding: 0 5rem 0 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+    text-align: left;
+}
+
+.t_input {
+    width: 20rem;
+}
+
+.btn {
+    border-radius: 1rem;
+    background-color: #9aaf00;
+    color: white;
+}
+
+@media screen and (max-width: 767px) {
+    main {
+        padding: 0 1rem 0 1rem;
+    }
+    h2 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .t_input {
+        width: 7rem;
+    }
+}

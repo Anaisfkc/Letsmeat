@@ -3,38 +3,60 @@ main {
     text-align: center;
     border-radius: 0.5rem;
     height: auto;
-    background-color:rgba(250, 226, 84, 0.9); /*#f9e259f2*/
+    background-color: rgba(250, 226, 84, 0.9);
+    /*#f9e259f2*/
     text-align: left;
 }
 
 .contenu {
-    padding-left: 5rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    padding-top: 3rem;
     color: #425100;
     margin: 0;
 }
 
-h2, h3{
-    padding-left: 5rem;
+h2 {
+    padding-bottom: 3rem;
     color: #323d01;
     margin: 0;
 }
 
-h5{
+h5 {
     font-weight: Bold;
     text-decoration: underline;
-    padding-left: 5rem;
     color: #323d01;
     margin: 0;
 }
 
 p {
-    padding-left: 5rem;
+    text-align: justify;
     color: #425100;
     margin: 0;
 }
 
-#moteur{
+#moteur {
     Font-Weight: Bold;
     color: #323d01;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+    h2 {
+        padding: 0;
+        margin: 0 0 2.5rem 0;
+        font-size: 1.4rem;
+        text-decoration: underline;
+    }
+    h5 {
+        padding: 0;
+        font-size: 1rem;
+    }
+    p {
+        padding: 0;
+        font-size: 0.7rem;
+    }
+    .contenu {
+        padding: 0 1rem 0 1rem;
+    }
 }

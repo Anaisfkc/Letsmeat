@@ -15,6 +15,14 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class PropositionController extends Controller
 {
+
+    /**
+     * @Route("/retrouver-des-amis", name="findamis")
+     */
+    public function trouveramis() {
+        return $this->render('profil/findamis.html.twig');
+    }
+    
     /**
      * @Route("/", name="proposition_index", methods="GET")
      */
@@ -87,4 +95,6 @@ class PropositionController extends Controller
 
         return $this->redirectToRoute('proposition_index');
     }
+
+    
 }
