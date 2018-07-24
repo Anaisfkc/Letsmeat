@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 use Symfony\Component\Validator\Constraints as Assert;
@@ -32,7 +34,7 @@ class User
     private $nom;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="string", length=1)
      */
     private $genre;
 
@@ -82,7 +84,12 @@ class User
     private $cp;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Proposition", inversedBy="user")
+     * @ORM\OneToMany(targetEntity="App\Entity\Reservation", mappedBy="user")
+     */
+    private $reservation;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Proposition", mappedBy="user")
      */
     private $proposition;
 
@@ -91,6 +98,12 @@ class User
      */
     private $profil;
 
+
+    public function __construct()
+    {
+        $this->reservation = new ArrayCollection();
+        $this->proposition = new ArrayCollection();
+    }
 
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
@@ -276,14 +289,80 @@ class User
         return $this;
     }
 
-    public function getProposition(): ?Proposition
+
+    public function __toString()
+    {
+        return (string) $this->prenom;
+        return (string) $this->nom;
+        return (string) $this->genre;
+        return (string) $this->pseudo;
+        return (string) $this->email;
+        return (string) $this->mdp;
+        return (string) $this->mdpconfirm;
+        return (string) $this->phone;
+        return (string) $this->adresse;
+        return (string) $this->ville;
+        return (string) $this->cp;
+    }
+
+    /**
+     * @return Collection|Reservation[]
+     */
+    public function getReservation(): Collection
+    {
+        return $this->reservation;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservation->contains($reservation)) {
+            $this->reservation[] = $reservation;
+            $reservation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservation->contains($reservation)) {
+            $this->reservation->removeElement($reservation);
+            // set the owning side to null (unless already changed)
+            if ($reservation->getUser() === $this) {
+                $reservation->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Proposition[]
+     */
+    public function getProposition(): Collection
     {
         return $this->proposition;
     }
 
-    public function setProposition(?Proposition $proposition): self
+    public function addProposition(Proposition $proposition): self
     {
-        $this->proposition = $proposition;
+        if (!$this->proposition->contains($proposition)) {
+            $this->proposition[] = $proposition;
+            $proposition->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProposition(Proposition $proposition): self
+    {
+        if ($this->proposition->contains($proposition)) {
+            $this->proposition->removeElement($proposition);
+            // set the owning side to null (unless already changed)
+            if ($proposition->getUser() === $this) {
+                $proposition->setUser(null);
+            }
+        }
 
         return $this;
     }
@@ -305,18 +384,4 @@ class User
         return $this;
     }
 
-    public function __toString()
-    {
-        return (string) $this->prenom;
-        return (string) $this->nom;
-        return (string) $this->genre;
-        return (string) $this->pseudo;
-        return (string) $this->email;
-        return (string) $this->mdp;
-        return (string) $this->mdpconfirm;
-        return (string) $this->phone;
-        return (string) $this->adresse;
-        return (string) $this->ville;
-        return (string) $this->cp;
-    }
 }

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Exo');
+
+.contenu {
+    background-size: cover; 
+    padding-left: 5rem;
+    padding-right: 5rem;
+    color: #425100;
+}
+
+h2{
+    /* font-family: 'Exo', sans-serif; */
+    font-size: 8rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    color: #425100;
+    margin: 0;
+    Text-Shadow: 4px 4px #637800;
+}
+
+
+.btnacceuil {
+    background-color: #9aaf00;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+#text1{
+    color: #425100;
+}
+
+#div1{
+    
+    padding-bottom: 1rem;
+}

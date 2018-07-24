@@ -3,7 +3,6 @@
 {% endblock %}
 
 {{ form_start(form,{'attr':{ 'id': 'userform', 'novalidate': 'novalidate'}}) }}
-
     <div class="form-row">
         <div class="form-group col-md-6">
         {{ form_label(form.prenom, 'Prénom') }}
@@ -25,7 +24,7 @@
 
         <div class="form-group col-md-6">
         {{ form_label(form.datenaissance, 'Date de naissance') }}
-        {{ form_widget(form.datenaissance, { 'id': 'datenaissance' },{'attr':{'placeholder': 'Entre ta Date de naissance ici'}}) }}
+        {{ form_widget(form.datenaissance, { 'id': 'datenaissance' , 'attr':{'type': 'date', 'class': 'date'}}) }}
             <div id="errorbirthdate">
                 {{ form_errors(form.datenaissance, { 'id': 'errorbirthdate' })}}
             </div>
@@ -81,40 +80,28 @@
         {{ form_errors(form.cp) }}
         </div>
 
-        <button type="submit" class="btn btnuser">{{ button_label|default('Valide ton formulaire ici') }}</button>
+        <button type="submit" class="btn btnuser" name="submit">{{ button_label|default('Valide ton formulaire ici') }}</button>
         </div>
     </div>
 </div>
 {{ form_end(form) }}
-
-<script>
-    $("#userform").submit(function(event) {
-        let dateNaiss = new Date($("#datenaissance").val());
-        let dateNaissTimestamp = dateNaiss.getTime();
-        let nowDate = new Date();
-        let year = nowDate.getFullYear() - 18;
-        nowDate = new Date(year, nowDate.getMonth(), nowDate.getDate(), "00", "00");
-        if (nowDate.getTime() < dateNaissTimestamp || dateNaiss == "Invalid Date") {
-            event.preventDefault();
-            $("#errorbirthdate").html("* Attention ! Tu es mineur .")
-        } else {
-            return true;
-        }
-    });
-    {# $("#userformulaire").submit(function() {
-        let dateNaiss = new Date($("#datenaissance").val());
-        let dateNaissTimestamp = dateNaiss.getTime();
-        let nowDate = new Date();
-        let year = nowDate.getFullYear() - 18;
-        let dateStr = nowDate.getDate() + "/" + nowDate.getMonth() + "/" + year + " 00:00";
-        nowDate = new Date(date[2], date[1], date[0], date[3], date[4]);
-        console.log(nowDate.getTime())
-        if (nowDate.getTime() < dateNaissTimestamp) {
-            event.preventDefault()
-            $("#test").text("Mineur")
-        } else {
-            $("#test").text("Majeur")
-        }
-    });#}
-            
-</script>
+         
+{% block  javascripts %}
+    <script>
+        $("#userform").submit(function() {
+            let select = $("#datenaissance select")
+            let dateNaiss = new Date( select.eq(0).val(), select.eq(1).val(), select.eq(2).val(), "00", "00")
+            let dateNaissTimestamp = dateNaiss.getTime();
+            let nowDate = new Date();
+            let year = nowDate.getFullYear() - 18;
+            nowDate = new Date(year, nowDate.getMonth(), nowDate.getDate(), "00", "00");
+            if (nowDate.getTime() < dateNaissTimestamp || dateNaiss == "Invalid Date") {
+                event.preventDefault();
+                $("#errorbirthdate").html("* Attention ! Tu es mineur .")
+            }
+            else {
+                return true;
+            }
+        });    
+    </script>
+{% endblock %}

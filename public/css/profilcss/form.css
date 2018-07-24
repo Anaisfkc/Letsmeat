@@ -1,0 +1,67 @@
+input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    top : 5px;
+    vertical-align: bottom;
+    position: relative;
+    *overflow: hidden;
+    float: left;
+
+}
+
+input[type="radio"] {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    top : 5px;
+    vertical-align: bottom;
+    position: relative;
+    *overflow: hidden;
+    float: left;
+
+}
+
+input[type="checkbox"] + label {
+    display: block;
+    padding-left: 15px;
+    text-indent: 15px;
+    font-size:0.9rem;
+}
+
+input[type="radio"] + label {
+    display: block;
+    padding-left: 15px;
+    text-indent: 15px;
+    font-size:0.9rem;
+}
+
+p{
+    font-size:0.8rem;
+    font-weight:normal;
+}
+
+button,
+.btn,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.btnprofil{
+    background-color: #9aaf00;
+    color:white;
+    font-size: 1rem;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+span {
+    font-size : 1rem;
+    font-weight: normal; 
+}
+
+

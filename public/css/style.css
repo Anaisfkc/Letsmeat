@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Glass+Antiqua|Petrona|Arima+Madurai|Dosis|Josefin+Slab|');
-
 @font-face {
     font-family: 'Track';
     src: url(font/Track-Italic/TTF\ files/Track.ttf);
 }
 
-body{
+body {
     background-image: url('../img/food2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     /* font-family: 'Track' ; */
     font-family: 'Arima Madurai';
     font-size: 1rem;
-    margin:0 10rem 0;
+    margin: 0 10rem 0;
     font-weight: bold;
 }
 
@@ -20,24 +19,24 @@ body{
     border-bottom: solid 0.05rem #9aaf00;
 }
 
-.btnmenu{
+.btnmenu {
     background-color: #9aaf00;
-    color:white;
+    color: white;
     font-size: 1.2rem;
     border-radius: 1rem;
     font-weight: bold;
 }
 
 .btnmenu:hover {
-    width:110%;
-    font-size:1.4rem;
+    width: 110%;
+    font-size: 1.4rem;
 }
 
 button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 .dropdown-menu {
@@ -48,13 +47,13 @@ html [type="button"],
 .dropdown-item {
     background-color: #fde560;
     border-bottom: solid 0.05rem #9aaf00;
-    color:white;
+    color: white;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-.dropdown-item:hover{
-    font-size:1.4rem;
+.dropdown-item:hover {
+    font-size: 1.4rem;
     background-color: #9aaf00;
 }
 
@@ -62,8 +61,9 @@ html [type="button"],
     background-color: #fde560;
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
-    color:white;
+.dropdown-item:focus,
+.dropdown-item:hover {
+    color: white;
 }
 
 .divImg {
@@ -73,8 +73,9 @@ html [type="button"],
 img {
     width: 10rem;
     height: 10rem;
-    margin:0;
+    margin: 0;
 }
+
 
 /* .h1{
     color: #9aaf00;
@@ -96,12 +97,12 @@ img {
     margin: 3rem 0 0 0;
 }
 
-a{
+a {
     color: #9aaf00;
 }
 
 a:hover {
-    color:#ffff;
+    color: #ffff;
     text-decoration-line: none;
 }
 
@@ -109,29 +110,31 @@ main {
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2), 6px 6px 20px 10px rgba(0, 0, 0, 0.19);
     text-align: center;
     border-radius: 0.5rem;
-    background-color:rgba(250, 226, 84, 0.9); /*#f9e259f2*/
-    height: 40rem;
+    background-color: rgba(250, 226, 84, 0.9);
+    /*#f9e259f2*/
+    height: auto;
 }
 
 .contenu {
-    border-radius:1rem;
+    border-radius: 1rem;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
     background-color: #9aaf00;
 }
 
-.nav-link{
+.nav-link {
     margin-bottom: 5rem;
-    color:#9aaf00;
+    color: #9aaf00;
 }
 
 .nav-link:hover {
-    font-size: 1.2rem;    
+    font-size: 1.2rem;
 }
 
 .navhead:hover {
-    background-color:#9aaf00;
+    background-color: #9aaf00;
 }
 
 .footer {
@@ -139,26 +142,28 @@ main {
 }
 
 .piedPage {
-    margin-top:2rem;
-    margin-bottom:-1rem;
+    margin-top: 2rem;
+    margin-bottom: -1rem;
 }
 
-.copyR{
+.copyR {
     color: #9aaf00;
     text-align: center;
     font-size: 0.8rem;
 }
 
-.slide-in-out 
-{
-    text-decoration:none;
-    color:#9aaf00;
+.slide-in-out {
+    text-decoration: none;
+    color: #9aaf00;
     display: inline-block;
-    position: relative; /* prepare the position for sliding in and out */
+    position: relative;
+    /* prepare the position for sliding in and out */
 }
+
+
 /* add a empty string before the elment with class .slide-in-out  */
-.slide-in-out:before 
-{
+
+.slide-in-out:before {
     content: '';
     display: block;
     height: 3px;
@@ -166,15 +171,16 @@ main {
     transition: width 0s ease, background-color .2s ease;
     -webkit-transition: width 0s ease, background-color .2s ease;
     -moz-transition: width 0s ease, background-color .2s ease;
-     
     /* position the content to the left bottom corner of the parent element to make it to slide in from left to right on hover */
     position: absolute;
     left: 0;
     bottom: 0;
 }
+
+
 /* add a empty string after the elment with class .slide-in-out  */
-.slide-in-out:after 
-{
+
+.slide-in-out:after {
     content: '';
     display: block;
     height: 3px;
@@ -183,27 +189,94 @@ main {
     transition: width .2s ease;
     -webkit-transition: width .2s ease, background-color .2s ease;
     -moz-transition: width .2s ease, background-color .2s ease;
-     
     /* position the content to the left bottom corner of the parent element to make it to slide out from left to right on hover */
     position: absolute;
     right: 0;
     bottom: 0;
 }
- 
+
+
 /* Change the width and background on hover, aka sliding in and out */
-.slide-in-out:hover:before 
-{
+
+.slide-in-out:hover:before {
     width: 100%;
     background: #9aaf00;
     transition: width .2s ease;
     -webkit-transition: width .2s ease;
     -moz-transition: width .2s ease;
 }
-.slide-in-out:hover:after 
-{
+
+.slide-in-out:hover:after {
     width: 100%;
     background: transparent;
     transition: all 0s ease;
     -webkit-transition: width 0s ease;
     -moz-transition: width .0s ease;
+}
+
+
+/* Responsive téléphone S,M,L */
+
+@media screen and (max-width: 767px) {
+    body {
+        margin: 0 2rem 0;
+    }
+    .divImg {
+        margin-right: 0;
+        padding: 0;
+    }
+    img {
+        padding: 0;
+        height: 5rem;
+        width: 5rem;
+    }
+    .inscription {
+        margin-right: 0;
+        border-radius: 1rem !important;
+        background-color: #9aaf00;
+        color: white;
+        margin: 1rem 0rem 0.3rem 0rem;
+        width: 14rem;
+        padding: 0rem;
+        font-size: 0.8rem;
+    }
+    .user {
+        border-radius: 1rem !important;
+        background-color: #9aaf00;
+        color: white;
+        margin: 0.3rem 0rem 1rem 0rem;
+        width: 14rem;
+        padding: 0rem;
+        font-size: 0.8rem;
+    }
+    .btnmenu {
+        margin: 1rem 0 1rem 1rem !important;
+        font-size: 0.8rem;
+    }
+    /* .btnmenu {
+        border-bottom: 17px double black;
+        border-top: 6px solid black;
+        content: "";
+        height: 5px;
+        width: 30px;
+    } */
+    .button_menu {
+        margin-right: 0;
+        padding: 0;
+    }
+    .login {
+        text-align: center;
+    }
+    .ulLogin {
+        margin: 0;
+    }
+    .reseau {
+        margin-bottom: 1rem;
+    }
+    .cgu {
+        margin-bottom: 1rem;
+    }
+    .pdc {
+        margin-bottom: 4rem;
+    }
 }

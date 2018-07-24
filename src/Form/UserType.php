@@ -25,7 +25,7 @@ class UserType extends AbstractType
             ->add('nom', TextType::class)
             ->add('genre', ChoiceType::class, array('choices' => array('Femme' => 'Femme',
             'Homme' => 'Homme'),'expanded' => true,'multiple' => false,))
-            ->add('datenaissance', BirthdayType::class, array('years' => range(1918, date('Y'))))
+            ->add('datenaissance', DateType::class, array('years' => range(1918, date('Y'))))
             ->add('pseudo', TextType::class)
             ->add('email', EmailType::class)
             ->add('mdp', PasswordType::class, array('help' => '*Renseigne un mot de passe entre 5 à 20 caractères, contenant au moins une majuscule, au moins un chiffre'))
@@ -34,8 +34,6 @@ class UserType extends AbstractType
             ->add('adresse', TextType::class)
             ->add('ville', TextType::class)
             ->add('cp', NumberType::class)
-            ->add('proposition', HiddenType::class)
-            ->add('profil', HiddenType::class)
         ;
 
     }
