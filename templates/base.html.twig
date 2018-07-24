@@ -15,49 +15,40 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header class="headerrow">
-            <div class="container-fluid">
-                <div class="row header">
-                    <div class="col-6 col-md-2 divImg ">
-           
-                    <a href="http://"><img src="{{ asset('img/logobv.png') }}" alt="logo"></a>
-                    </div>
-                    <div class="col-6 col-md-6 button_menu">
-                        <div class="dropdown">
-                            <button class="lines btn btnmenu btn-lg btn-block" type="button" id="dropdownMenu2" aria-haspopup="true" aria-expanded="false" style="margin: 3rem 0 0 0;">Menu</button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="menu">
-                                <a href="http://"><button class="dropdown-item" type="button" id="menu1">Découvrir le concept "Let's M'eat"</button></a>
-                                <a href="http://"><button class="dropdown-item" type="button" id="menu2">Proposer/Réserver</button></a>
-                                <a href="http://"><button class="dropdown-item" type="button" id="menu3">Profil</button></a>
-                                <a href="http://"><button class="dropdown-item" type="button" id="menu4">Retrouver des amis</button></a>
-                                <a href="http://"><button class="dropdown-item" type="button" id="menu5">Contact</button></a>
+        <div>
+            {% block  body %}
+            <header class="headerrow">
+                <div class="container-fluid">
+                    <div class="row header">
+                        <div class="col-6 col-md-2 divImg">
+                            <a href="/"><img src="{{ asset('img/logobv.png') }}" alt="logo"></a>
+                        </div>
+                        <div class="col-6 col-md-6 button_menu">
+                            <div class="dropdown">
+                                <button class="btn btnmenu btn-lg btn-block" type="button" id="dropdownMenu2" aria-haspopup="true" aria-expanded="false" style="margin: 3rem 0 0 0;">Menu</button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="menu">
+                                    <a href="{{ path('accueil') }}" class="dropdown-item" type="button" id="menu1">Accueil</a>
+                                    <a href="{{ path('concept') }}" class="dropdown-item" type="button" id="menu1">Découvrir le concept "Let's M'eat"</a>
+                                    <a href="" class="dropdown-item" type="button" id="menu2">Proposer/Réserver</a>
+                                    <a href="{{ path('voir-profil') }}" class="dropdown-item" type="button" id="menu3">Profil</a>
+                                    <a href="" class="dropdown-item" type="button" id="menu4">Retrouver des amis</a>
+                                    <a href="{{ path('contact')}}" class="dropdown-item" type="button" id="menu5">Contact</a>
+                                </div>
                             </div>
                         </div>
                         {% block  login %}
-                        <div class="col-3 login slidediv">
+                        <div class="col-12 col-md-3 login slidediv">
                             <div class="nav nav-pills nav-fill ulLogin" id="pills-tab" role="tablist">
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out" id="pills-home-tab" href="user/inscription" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
+                                    <a class="nav-link slide-in-out inscription" id="pills-home-tab" href="{{ path('inscription-user') }}" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
                                 </div>
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out" id="pills-profile-tab" href="profil/login" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
+                                    <a class="nav-link slide-in-out user" id="pills-profile-tab" href="" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
                                 </div>
                             </div>
                         </div>
                         {% endblock %}
                     </div>
-                    {% block login %}
-                    <div class="col-12 col-md-3 login slidediv">
-                        <ul class="nav nav-pills nav-fill ulLogin" id="pills-tab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link slide-in-out inscription" id="pills-home-tab" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link slide-in-out user" id="pills-profile-tab" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
-                            </li>
-                        </ul>
-                    </div>
-                    {% endblock %}
                 </div>
 
             </header>
@@ -73,23 +64,22 @@
                 {% endblock %}
             </main>
             {% endblock %}
-        </main>
-        {% endblock %}
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 piedPage slidediv">
-                        <ul class="nav justify-content-center nav-fill">
-                            <li class="nav-item">
-                                <a class="nav-link active slide-in-out reseau" href="#"><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link slide-in-out cgu" href="#">CGU</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link slide-in-out pdc" href="/default/politiqueconfidential.html.twig">Politique de confidentialité</a>
-                            </li>
-                        </ul>
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 piedPage slidediv">
+                            <div class="nav justify-content-center nav-fill">
+                                <div class="nav-item">
+                                    <a class="nav-link active slide-in-out reseau" href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <div class="nav-item">
+                                    <a class="nav-link slide-in-out cgu" href="{{ path('cgu') }}">CGU</a>
+                                </div>
+                                <div class="nav-item">
+                                    <a class="nav-link slide-in-out pdc" href="{{ path('politiqueconfidential') }}">Politique de confidentialité</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-12">

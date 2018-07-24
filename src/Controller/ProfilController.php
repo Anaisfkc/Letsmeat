@@ -3,13 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Profil;
-// use App\Entity\User;
+use App\Entity\User;
 use App\Form\ProfilType;
 use App\Repository\ProfilRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
@@ -28,12 +29,19 @@ class ProfilController extends Controller
         return $this->render('profil/index.html.twig', ['profils' => $profilRepository->findAll()]);
     }
 
+
+    /**
+     * @Route("/user/voir-user/{user_id}", name = "voir-user")
+     * @ParamConverter("user", options={"id" = "user_id"})
+     * @Method("GET")
+     */
     /**
      * @Route("/creer-profil", name="creer-profil", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
         $profil = new Profil();
+        $user_id = $this->getUser();
         $form = $this->createForm (ProfilType::class, $profil);
         $form->handleRequest($request);
 
@@ -44,7 +52,7 @@ class ProfilController extends Controller
 
             $data = $form->getData();
 
-            return $this->redirectToRoute('voir-profil');
+            return $this->redirectToRoute('voir-user');
         }
 
         return $this->render('profil/creerprofil.html.twig', [
@@ -94,4 +102,5 @@ class ProfilController extends Controller
 
         return $this->redirectToRoute('accueil');
     }
+
 }
