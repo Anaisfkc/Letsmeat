@@ -1,4 +1,78 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{% block  stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/profilcss/form.css') }}">
+{% endblock %}
+
+
+{{ form_start(form, {'attr':{ 'id': 'profilform', 'novalidate': 'novalidate'}}) }}
+    <div class="form-row">
+        <div class="form-group col-md-12">
+        {{ form_label(form.saveurs, 'Ta /ou tes saveur(s) préféré(s):') }}
+        {{ form_help(form.saveurs) }}
+        {{ form_widget(form.saveurs, {'attr':{'class': 'form-controlcheck-input', 'value': '1'}}) }}
+        {{ form_errors(form.saveurs) }}
+        </div>
+        
+        <div class="form-group col-md-12">
+        {{ form_label(form.pratiquefood, 'Ta /ou tes pratique(s) alimentaire(s) :') }}
+        {{ form_help(form.pratiquefood) }}
+        {{ form_widget(form.pratiquefood, {'attr':{'class': 'form-controlcheck-input'}}) }}
+        {{ form_errors(form.pratiquefood) }}
+        </div>
+
+        <div class="form-group col-md-12">
+        {{ form_label(form.prescriptionfood, 'Ta /ou tes prescription(s) alimentaire(s) :') }}
+        {{ form_help(form.prescriptionfood) }}
+        {{ form_widget(form.prescriptionfood, {'attr':{'class': 'form-controlcheck-input'}}) }}
+        {{ form_errors(form.prescriptionfood) }}
+        </div>
+
+        <div class="form-group col-md-12">
+        {{ form_label(form.typefood, 'Tu es plus fastfood ou slowfood :') }}
+        {{ form_help(form.typefood) }}
+        {{ form_widget(form.typefood, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input'}}) }}
+        {{ form_errors(form.typefood) }}
+        </div>
+
+        <div class="form-group col-md-12">
+        {{ form_label(form.recette, 'Sélectionne un repas que tu aimes parmis cette liste :') }}
+        {{ form_help(form.recette) }}
+        {{ form_widget(form.recette, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input'}}) }}
+        {{ form_errors(form.recette) }}
+        </div>
+
+        <div class="form-group col-md-12">
+        {{ form_label(form.intolerance, 'Ta /ou tes intolérance(s) alimentaire(s), si tu en as :') }}
+        {{ form_help(form.intolerance) }}
+        {{ form_widget(form.intolerance, {'attr':{'class': 'form-controlcheck-input'}}) }}
+        {{ form_errors(form.intolerance) }}
+        </div>
+
+        <button type="submit" class="btn btnprofil">{{ button_label|default('Valide ton formulaire ici') }}</button>
+        </div>
+    </div>
+</div>
 {{ form_end(form) }}
+
+{# {% block  javascripts %}
+<script>
+    $("#profilform").submit(function () {
+
+        var check = $(this);
+
+        check.find('input[type="checkbox"]').each( function () {
+            var checkbox_this = $(this);
+
+
+            if( checkbox_this.is(":checked") == true ) {
+                checkbox_this.attr('value','1');
+            } else {
+                checkbox_this.prop('checked',true);
+                //DONT' ITS JUST CHECK THE CHECKBOX TO SUBMIT FORM DATA    
+                checkbox_this.attr('value','0');
+            }
+        })
+    })
+</script>
+{% endblock %} #}
+
+{# {{ include('profil/matching.php') }} #}

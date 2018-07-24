@@ -9,8 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         {% block  stylesheets %}
         {% endblock %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     </head>
-    {% block  body %}
     <body>
         <header class="headerrow">
             <div class="container-fluid">
@@ -30,6 +33,18 @@
                                 <a href="http://"><button class="dropdown-item" type="button" id="menu5">Contact</button></a>
                             </div>
                         </div>
+                        {% block  login %}
+                        <div class="col-3 login slidediv">
+                            <div class="nav nav-pills nav-fill ulLogin" id="pills-tab" role="tablist">
+                                <div class="nav-item">
+                                    <a class="nav-link slide-in-out" id="pills-home-tab" href="user/inscription" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
+                                </div>
+                                <div class="nav-item">
+                                    <a class="nav-link slide-in-out" id="pills-profile-tab" href="profil/login" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endblock %}
                     </div>
                     {% block login %}
                     <div class="col-12 col-md-3 login slidediv">
@@ -44,17 +59,19 @@
                     </div>
                     {% endblock %}
                 </div>
-            </div>
-        </header>
-        {% block main %}
-        <main>
-            {% block contenu %}
-            <div class="container contenu">
-                <div class="row">
-                    <div class="col-12">
+
+            </header>
+            {% block main %}
+            <main>
+                {% block contenu %}
+                <div class="container contenu">
+                    <div class="row">
+                        <div class="col-12">
+                        </div>
                     </div>
                 </div>
-            </div>
+                {% endblock %}
+            </main>
             {% endblock %}
         </main>
         {% endblock %}
@@ -74,22 +91,18 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p class="copyR">© 2018 Let's M'eat Company.</p>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="copyR">© 2018 Let's M'eat Company.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
+            {% endblock %}
+        </div>
 
-        {% block  javascripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="{{ asset('js/script.js') }}"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-        {% endblock %}                
+        {% block  javascripts %}
+        {% endblock %}
     </body>
-    {% endblock %}
 </html>

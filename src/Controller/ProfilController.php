@@ -3,18 +3,23 @@
 namespace App\Controller;
 
 use App\Entity\Profil;
+// use App\Entity\User;
 use App\Form\ProfilType;
 use App\Repository\ProfilRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
  * @Route("/profil")
  */
+
 class ProfilController extends Controller
 {
+
     /**
      * @Route("/", name="profil_index", methods="GET")
      */
@@ -24,12 +29,12 @@ class ProfilController extends Controller
     }
 
     /**
-     * @Route("/new", name="profil_new", methods="GET|POST")
+     * @Route("/creer-profil", name="creer-profil", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
         $profil = new Profil();
-        $form = $this->createForm(ProfilType::class, $profil);
+        $form = $this->createForm (ProfilType::class, $profil);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -37,25 +42,27 @@ class ProfilController extends Controller
             $em->persist($profil);
             $em->flush();
 
-            return $this->redirectToRoute('profil_index');
+            $data = $form->getData();
+
+            return $this->redirectToRoute('voir-profil');
         }
 
-        return $this->render('creerprofil.html.twig', [
+        return $this->render('profil/creerprofil.html.twig', [
             'profil' => $profil,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="profil_show", methods="GET")
+     * @Route("/voir-profil", name="voir-profil", methods="GET")
      */
     public function show(Profil $profil): Response
     {
-        return $this->render('profil/show.html.twig', ['profil' => $profil]);
+        return $this->render('profil/voir-profil.html.twig', ['profil' => $profil]);
     }
 
     /**
-     * @Route("/{id}/edit", name="profil_edit", methods="GET|POST")
+     * @Route("/modifier-profil", name="modif-profil", methods="GET|POST")
      */
     public function edit(Request $request, Profil $profil): Response
     {
@@ -65,17 +72,17 @@ class ProfilController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('profil_edit', ['id' => $profil->getId()]);
+            return $this->redirectToRoute('voir-profil', ['id' => $profil->getId()]);
         }
 
-        return $this->render('profil/edit.html.twig', [
+        return $this->render('profil/modifprofil.html.twig', [
             'profil' => $profil,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="profil_delete", methods="DELETE")
+     * @Route("/supprimer-mon-profil", name="supp-profil", methods="DELETE")
      */
     public function delete(Request $request, Profil $profil): Response
     {
@@ -85,6 +92,6 @@ class ProfilController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('profil_index');
+        return $this->redirectToRoute('accueil');
     }
 }

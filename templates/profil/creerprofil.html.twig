@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block  stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/usercss/inscription.css') }}">
+{% endblock %}
+
+{% block contenu %}
+<div class="container contenu">
+    {% block titre %}<h4>Crée ton Profil Culinaire :</h4>
+    <span>* Vos rencontres culinaires ainsi que les utilisateurs que vous pourrez rencontrer dépendront de vos réponses</span><br><br><br>
+    {% endblock %}
+
+    {{ include('profil/_form.html.twig') }}
+</div>
+{% endblock %}

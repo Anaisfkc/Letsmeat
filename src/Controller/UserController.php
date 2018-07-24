@@ -9,14 +9,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * @Route("/user")
  */
+
 class UserController extends Controller
 {
+
     /**
-     * @Route("/", name="user_index", methods="GET")
+     * @Route("/index", name="index-user", methods="GET")
      */
     public function index(UserRepository $userRepository): Response
     {
@@ -24,7 +27,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/new", name="user_new", methods="GET|POST")
+     * @Route("/inscription", name="inscription-user", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
@@ -37,7 +40,9 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('user_index');
+            $data = $form->getData();
+
+            return $this->redirectToRoute('creer-profil');
         }
 
         return $this->render('user/inscription.html.twig', [
@@ -47,15 +52,15 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="user_show", methods="GET")
+     * @Route("/voir-informations-personnelles", name="voir-user", methods="GET")
      */
     public function show(User $user): Response
     {
-        return $this->render('user/show.html.twig', ['user' => $user]);
+        return $this->render('user/voir-user.html.twig', ['user' => $user]);
     }
 
     /**
-     * @Route("/{id}/edit", name="user_edit", methods="GET|POST")
+     * @Route("/modifier-informations-personnelles", name="modif-user", methods="GET|POST")
      */
     public function edit(Request $request, User $user): Response
     {
@@ -65,17 +70,17 @@ class UserController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('user_edit', ['id' => $user->getId()]);
+            return $this->redirectToRoute('voir-user', ['id' => $user->getId()]);
         }
 
-        return $this->render('user/edit.html.twig', [
+        return $this->render('user/modif-user.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="user_delete", methods="DELETE")
+     * @Route("/supprimer-mon-compte", name="supp-user", methods="DELETE")
      */
     public function delete(Request $request, User $user): Response
     {
@@ -85,6 +90,6 @@ class UserController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('user_index');
+        return $this->redirectToRoute('accueil');
     }
 }

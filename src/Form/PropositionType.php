@@ -16,6 +16,8 @@ class PropositionType extends AbstractType
             ->add('contenu')
             ->add('datetime')
             ->add('nbdispo')
+            ->add('user', HiddenType::class)
+            ->add('profil', HiddenType::class)
         ;
     }
 

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -17,28 +19,66 @@ class Reservation
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Proposition", cascade={"persist", "remove"})
+     * @ORM\ManyToMany(targetEntity="App\Entity\Proposition", inversedBy="reservation")
      */
     private $proposition;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Profil", inversedBy="reservation")
+     */
+    private $profil;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="reservation")
      */
     private $user;
+
+    public function __construct()
+    {
+        $this->proposition = new ArrayCollection();
+    }
+
+
 
     public function getId()
     {
         return $this->id;
     }
 
-    public function getProposition(): ?Proposition
+    /**
+     * @return Collection|Proposition[]
+     */
+    public function getProposition(): Collection
     {
         return $this->proposition;
     }
 
-    public function setProposition(?Proposition $proposition): self
+    public function addProposition(Proposition $proposition): self
     {
-        $this->proposition = $proposition;
+        if (!$this->proposition->contains($proposition)) {
+            $this->proposition[] = $proposition;
+        }
+
+        return $this;
+    }
+
+    public function removeProposition(Proposition $proposition): self
+    {
+        if ($this->proposition->contains($proposition)) {
+            $this->proposition->removeElement($proposition);
+        }
+
+        return $this;
+    }
+
+    public function getProfil(): ?Profil
+    {
+        return $this->profil;
+    }
+
+    public function setProfil(?Profil $profil): self
+    {
+        $this->profil = $profil;
 
         return $this;
     }

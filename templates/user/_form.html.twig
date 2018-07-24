@@ -1,4 +1,107 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{% block  stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/usercss/form.css') }}">
+{% endblock %}
+
+{{ form_start(form,{'attr':{ 'id': 'userform', 'novalidate': 'novalidate'}}) }}
+    <div class="form-row">
+        <div class="form-group col-md-6">
+        {{ form_label(form.prenom, 'Prénom') }}
+        {{ form_widget(form.prenom, {'attr':{'class': 'form-control', 'placeholder': 'Tape ton prénom ici'}}) }}
+        {{ form_errors(form.prenom) }}
+        </div>
+        
+        <div class="form-group col-md-6">
+        {{ form_label(form.nom, 'Nom') }}
+        {{ form_widget(form.nom, {'attr':{'class': 'form-control', 'placeholder': 'Tape ton nom ici'}}) }}
+        {{ form_errors(form.nom) }}
+        </div>
+
+        <div class="form-group col-md-6">
+        {{ form_label(form.genre, 'Genre') }}
+        {{ form_widget(form.genre, {'attr':{'class': 'form-controlcheck-input radiobox'}}) }}
+        {{ form_errors(form.genre) }}
+        </div>
+
+        <div class="form-group col-md-6">
+        {{ form_label(form.datenaissance, 'Date de naissance') }}
+        {{ form_widget(form.datenaissance, { 'id': 'datenaissance' , 'attr':{'type': 'date', 'class': 'date'}}) }}
+            <div id="errorbirthdate">
+                {{ form_errors(form.datenaissance, { 'id': 'errorbirthdate' })}}
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+        {{ form_label(form.pseudo, 'Pseudo') }}
+        {{ form_widget(form.pseudo, {'attr':{'class': 'form-control', 'placeholder': 'Tape ton pseudo ici'}}) }}
+        {{ form_errors(form.pseudo) }}
+        </div>
+
+        <div class="form-group col-md-6">
+        {{ form_label(form.email, 'Email') }}
+        {{ form_widget(form.email, {'attr':{'class': 'form-control', 'placeholder': 'Tape ton adresse mail ici, ex : nom.prenom@mail.com'}}) }}
+        {{ form_errors(form.email) }}
+        </div>
+
+        <div class="form-group col-md-6">
+        {{ form_label(form.mdp, 'Mot de passe') }}
+        {{ form_widget(form.mdp, {'attr':{'class': 'form-control', 'placeholder': 'Tape ton mot de passe ici'}}) }}
+        {{ form_help(form.mdp) }}
+        {{ form_errors(form.mdp) }}
+        </div>
+
+        <div class="form-group col-md-6">
+        {{ form_label(form.mdpconfirm, 'Confirmation de ton Mot de Passe') }}
+        {{ form_widget(form.mdpconfirm, {'attr':{'class': 'form-control', 'placeholder': 'Retape ton mot de passe ici'}}) }}
+        {{ form_help(form.mdpconfirm) }}
+        {{ form_errors(form.mdpconfirm) }}
+        </div>
+
+        <div class="form-group col-md-4">
+        {{ form_label(form.phone, 'Téléphone') }}
+        {{ form_widget(form.phone, {'attr':{'class': 'form-control', 'placeholder': 'Tape ton n° de téléphone ici'}}) }}
+        {{ form_errors(form.phone) }}
+        </div>
+
+        <div class="form-group col-md-8">
+        {{ form_label(form.adresse, 'Adresse') }}
+        {{ form_widget(form.adresse, {'attr':{'class': 'form-control', 'placeholder': 'Entre ton adresse ici'}}) }}
+        {{ form_errors(form.adresse) }}
+        </div>
+
+        <div class="form-group col-md-7">
+        {{ form_label(form.ville, 'Ville') }}
+        {{ form_widget(form.ville, {'attr':{'class': 'form-control', 'placeholder': 'Entre ta ville ici'}}) }}
+        {{ form_errors(form.ville) }}
+        </div>
+
+        <div class="form-group col-md-5">
+        {{ form_label(form.cp, 'Code postal') }}
+        {{ form_widget(form.cp, {'attr':{'class': 'form-control', 'placeholder': 'Entre ton code postal ici'}}) }}
+        {{ form_errors(form.cp) }}
+        </div>
+
+        <button type="submit" class="btn btnuser" name="submit">{{ button_label|default('Valide ton formulaire ici') }}</button>
+        </div>
+    </div>
+</div>
 {{ form_end(form) }}
+         
+{% block  javascripts %}
+    <script>
+        $("#userform").submit(function() {
+            let select = $("#datenaissance select")
+            let dateNaiss = new Date( select.eq(0).val(), select.eq(1).val(), select.eq(2).val(), "00", "00")
+            let dateNaissTimestamp = dateNaiss.getTime();
+            let nowDate = new Date();
+            let year = nowDate.getFullYear() - 18;
+            nowDate = new Date(year, nowDate.getMonth(), nowDate.getDate(), "00", "00");
+            if (nowDate.getTime() < dateNaissTimestamp || dateNaiss == "Invalid Date") {
+                event.preventDefault();
+                $("#errorbirthdate").html("* Attention ! Tu es mineur .")
+            }
+            else {
+                return true;
+            }
+        });    
+    </script>
+{% endblock %}
