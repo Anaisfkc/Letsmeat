@@ -102,6 +102,8 @@ main {
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2), 6px 6px 20px 10px rgba(0, 0, 0, 0.19);
     text-align: center;
     border-radius: 0.5rem;
+    background-color: rgba(250, 226, 84, 0.9);
+    /*#f9e259f2*/
     height: 40rem;
 }
 
@@ -204,24 +206,69 @@ main {
     -moz-transition: width .0s ease;
 }
 
-@media screen and (max-width: 480px) {
+
+/* Responsive téléphone S,M,L */
+
+@media screen and (max-width: 767px) {
     body {
         margin: 0 2rem 0;
     }
     .divImg {
         margin-right: 0;
-    }
-    .inscription {
-        margin-right: 0;
-    }
-    .user {
-        border-radius: 1rem;
-        background-color: #9aaf00;
-        color: white;
+        padding: 0;
     }
     img {
         padding: 0;
         height: 5rem;
         width: 5rem;
+    }
+    .inscription {
+        margin-right: 0;
+        border-radius: 1rem !important;
+        background-color: #9aaf00;
+        color: white;
+        margin: 1rem 0rem 0.3rem 0rem;
+        width: 14rem;
+        padding: 0rem;
+        font-size: 0.8rem;
+    }
+    .user {
+        border-radius: 1rem !important;
+        background-color: #9aaf00;
+        color: white;
+        margin: 0.3rem 0rem 1rem 0rem;
+        width: 14rem;
+        padding: 0rem;
+        font-size: 0.8rem;
+    }
+    .btnmenu {
+        margin: 1rem 0 1rem 1rem !important;
+        font-size: 0.8rem;
+    }
+    /* .btnmenu {
+        border-bottom: 17px double black;
+        border-top: 6px solid black;
+        content: "";
+        height: 5px;
+        width: 30px;
+    } */
+    .button_menu {
+        margin-right: 0;
+        padding: 0;
+    }
+    .login {
+        text-align: center;
+    }
+    .ulLogin {
+        margin: 0;
+    }
+    .reseau {
+        margin-bottom: 1rem;
+    }
+    .cgu {
+        margin-bottom: 1rem;
+    }
+    .pdc {
+        margin-bottom: 4rem;
     }
 }

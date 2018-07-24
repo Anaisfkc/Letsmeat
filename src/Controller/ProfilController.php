@@ -40,7 +40,7 @@ class ProfilController extends Controller
             return $this->redirectToRoute('profil_index');
         }
 
-        return $this->render('profil/new.html.twig', [
+        return $this->render('creerprofil.html.twig', [
             'profil' => $profil,
             'form' => $form->createView(),
         ]);
