@@ -7,8 +7,30 @@ main {
     text-align: left;
 }
 
-p {
+.contenu {
     padding-left: 5rem;
+    color: #425100;
+    margin: 0;
+}
+
+h2{
+    padding-left: 5rem;
+    color: #323d01;
+    margin: 0;
+}
+
+h4{
+    font-weight: Bold;
+    text-decoration: underline;
+    padding-left: 5rem;
+    color: #323d01;
+    margin: 0;
+}
+
+p {
+    text-align: justify;
+    padding-left: 5rem;
+    padding-right: 5rem;
     color: #425100;
     margin: 0;
 }
