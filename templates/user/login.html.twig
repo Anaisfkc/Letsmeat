@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block  stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/usercss/inscription.css') }}">
+{% endblock %}
+
+{% block contenu %}
+<div class="container contenu">
+    {% block titre %}<h4>Connexion</h4><br><br>{% endblock %}
+
+    {{ include('user/_formlogin.html.twig') }}
+</div>
+{% endblock %}

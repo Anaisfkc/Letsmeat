@@ -12,8 +12,10 @@ class ReservationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('proposition')
-            ->add('user')
+
+            ->add('user', HiddenType::class)
+            ->add('profil', HiddenType::class)
+            ->add('proposition', HiddenType::class)
         ;
     }
 

@@ -39,14 +39,26 @@ class Proposition
     private $nbdispo;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="proposition")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Reservation", mappedBy="proposition")
+     */
+    private $reservation;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Profil", inversedBy="proposition")
+     */
+    private $profil;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="proposition")
      */
     private $user;
 
     public function __construct()
     {
-        $this->user = new ArrayCollection();
+        $this->reservation = new ArrayCollection();
     }
+
+
 
     public function getId()
     {
@@ -102,33 +114,57 @@ class Proposition
     }
 
     /**
-     * @return Collection|User[]
+     * @return Collection|Reservation[]
      */
-    public function getUser(): Collection
+    public function getReservation(): Collection
+    {
+        return $this->reservation;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservation->contains($reservation)) {
+            $this->reservation[] = $reservation;
+            $reservation->addProposition($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservation->contains($reservation)) {
+            $this->reservation->removeElement($reservation);
+            $reservation->removeProposition($this);
+        }
+
+        return $this;
+    }
+
+    public function getProfil(): ?Profil
+    {
+        return $this->profil;
+    }
+
+    public function setProfil(?Profil $profil): self
+    {
+        $this->profil = $profil;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function addUser(User $user): self
+    public function setUser(?User $user): self
     {
-        if (!$this->user->contains($user)) {
-            $this->user[] = $user;
-            $user->setProposition($this);
-        }
+        $this->user = $user;
 
         return $this;
     }
 
-    public function removeUser(User $user): self
-    {
-        if ($this->user->contains($user)) {
-            $this->user->removeElement($user);
-            // set the owning side to null (unless already changed)
-            if ($user->getProposition() === $this) {
-                $user->setProposition(null);
-            }
-        }
 
-        return $this;
-    }
+
 }
