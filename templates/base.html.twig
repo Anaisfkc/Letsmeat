@@ -26,12 +26,12 @@
                             <div class="dropdown">
                                 <button class="btn btnmenu btn-lg btn-block" type="button" id="dropdownMenu2" aria-haspopup="true" aria-expanded="false" style="margin: 3rem 0 0 0;">Menu</button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="menu">
-                                    <a href="/" class="dropdown-item" type="button" id="menu1">Accueil</a>
-                                    <a href="/concept" class="dropdown-item" type="button" id="menu1">Découvrir le concept "Let's M'eat"</a>
-                                    <a href="/propositions" class="dropdown-item" type="button" id="menu2">Proposer/Réserver</a>
-                                    <a href="profil/voir-profil" class="dropdown-item" type="button" id="menu3">Profil</a>
-                                    <a href="profil/retrouver-des-amis" class="dropdown-item" type="button" id="menu4">Retrouver des amis</a>
-                                    <a href="/contact" class="dropdown-item" type="button" id="menu5">Contact</a>
+                                    <a href="{{ path('accueil') }}" class="dropdown-item" type="button" id="menu1">Accueil</a>
+                                    <a href="{{ path('concept') }}" class="dropdown-item" type="button" id="menu1">Découvrir le concept "Let's M'eat"</a>
+                                    <a href="" class="dropdown-item" type="button" id="menu2">Proposer/Réserver</a>
+                                    <a href="{{ path('voir-profil') }}" class="dropdown-item" type="button" id="menu3">Profil</a>
+                                    <a href="" class="dropdown-item" type="button" id="menu4">Retrouver des amis</a>
+                                    <a href="{{ path('contact')}}" class="dropdown-item" type="button" id="menu5">Contact</a>
                                 </div>
                             </div>
                         </div>
@@ -39,10 +39,10 @@
                         <div class="col-3 login slidediv">
                             <div class="nav nav-pills nav-fill ulLogin" id="pills-tab" role="tablist">
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out" id="pills-home-tab" href="user/inscription" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
+                                    <a class="nav-link slide-in-out" id="pills-home-tab" href="{{ path('inscription-user') }}" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
                                 </div>
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out" id="pills-profile-tab" href="profil/login" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
+                                    <a class="nav-link slide-in-out" id="pills-profile-tab" href="" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
                                 </div>
                             </div>
                         </div>
@@ -72,10 +72,10 @@
                                     <a class="nav-link active slide-in-out" href="#"><i class="fab fa-instagram"></i></a>
                                 </div>
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out" href="/cgu">CGU</a>
+                                    <a class="nav-link slide-in-out" href="{{ path('cgu') }}">CGU</a>
                                 </div>
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out" href="/politique-confidentialite">Politique de confidentialité</a>
+                                    <a class="nav-link slide-in-out" href="{{ path('politiqueconfidential') }}">Politique de confidentialité</a>
                                 </div>
                             </div>
                         </div>
