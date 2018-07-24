@@ -19,11 +19,11 @@
             {% block  body %}
             <header class="headerrow">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-2 divImg">
+                    <div class="row header">
+                        <div class="col-6 col-md-2 divImg">
                             <a href="/"><img src="{{ asset('img/logobv.png') }}" alt="logo"></a>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 col-md-6 button_menu">
                             <div class="dropdown">
                                 <button class="btn btnmenu btn-lg btn-block" type="button" id="dropdownMenu2" aria-haspopup="true" aria-expanded="false" style="margin: 3rem 0 0 0;">Menu</button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="menu">
@@ -40,10 +40,10 @@
                         <div class="col-12 col-md-3 login slidediv">
                             <div class="nav nav-pills nav-fill ulLogin" id="pills-tab" role="tablist">
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out" id="pills-home-tab" href="{{ path('inscription-user') }}" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
+                                    <a class="nav-link slide-in-out inscription" id="pills-home-tab" href="{{ path('inscription-user') }}" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
                                 </div>
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out" id="pills-profile-tab" href="" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
+                                    <a class="nav-link slide-in-out user" id="pills-profile-tab" href="" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
                                 </div>
                             </div>
                         </div>
@@ -70,13 +70,13 @@
                         <div class="col-12 piedPage slidediv">
                             <div class="nav justify-content-center nav-fill">
                                 <div class="nav-item">
-                                    <a class="nav-link active slide-in-out" href="#"><i class="fab fa-instagram"></i></a>
+                                    <a class="nav-link active slide-in-out reseau" href="#"><i class="fab fa-instagram"></i></a>
                                 </div>
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out" href="{{ path('cgu') }}">CGU</a>
+                                    <a class="nav-link slide-in-out cgu" href="{{ path('cgu') }}">CGU</a>
                                 </div>
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out" href="{{ path('politiqueconfidential') }}">Politique de confidentialité</a>
+                                    <a class="nav-link slide-in-out pdc" href="{{ path('politiqueconfidential') }}">Politique de confidentialité</a>
                                 </div>
                             </div>
                         </div>
