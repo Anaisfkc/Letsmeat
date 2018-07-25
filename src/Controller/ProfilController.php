@@ -38,19 +38,17 @@ class ProfilController extends Controller
     public function new(Request $request): Response
     {
         $profil = new Profil();
-        $user = $this->getUser();
         $form = $this->createForm (ProfilType::class, $profil);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $profil->setUser($user);
             $em->persist($profil);
             $em->flush();
 
             $data = $form->getData();
 
-            return new RedirectResponse($this->generateUrl('voiruser'));
+            return new RedirectResponse($this->generateUrl('redirectvalid'));
         }
 
         return $this->render('profil/creerprofil.html.twig', [

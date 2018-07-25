@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block  stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/usercss/inscription.css') }}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+{% endblock %}
+
+{% block contenu %}
+<div class="container contenu">
+    {% block titre %}<p>Super ! Tu as bien créé ton profil, maintenant connecte toi</p><br><br>{% endblock %}
+    <div>
+        <div class="nav-item">
+            <i class="fas fa-arrow-down" style="color: white"></i>
+        </div><br><br>
+
+        <a href="{{ path('login') }}">Clique ici pour te connecter</a>
+    </div>
+
+{% endblock %}

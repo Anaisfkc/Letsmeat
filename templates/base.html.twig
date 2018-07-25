@@ -27,7 +27,6 @@
                             <div class="dropdown">
                                 <button class="btn btnmenu btn-lg btn-block" type="button" id="dropdownMenu2" aria-haspopup="true" aria-expanded="false" style="margin: 3rem 0 0 0;">Menu</button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="menu">
-                                    <a href="{{ path('accueil') }}" class="dropdown-item" type="button" id="menu1">Accueil</a>
                                     <a href="{{ path('concept') }}" class="dropdown-item" type="button" id="menu1">Découvrir le concept "Let's M'eat"</a>
                                     <a href="" class="dropdown-item" type="button" id="menu2">Proposer/Réserver</a>
                                     <a href="{{ path('voirprofil') }}" class="dropdown-item" type="button" id="menu3">Profil</a>
@@ -43,7 +42,7 @@
                                     <a class="nav-link slide-in-out inscription" id="pills-home-tab" href="{{ path('inscription') }}" role="tab" aria-controls="pills-home" aria-selected="true">Inscription</a>
                                 </div>
                                 <div class="nav-item">
-                                    <a class="nav-link slide-in-out user" id="pills-profile-tab" href="" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
+                                    <a class="nav-link slide-in-out user" id="pills-profile-tab" href="{{ path('login') }}" role="tab" aria-controls="pills-profile" aria-selected="false">Connexion</a>
                                 </div>
                             </div>
                         </div>

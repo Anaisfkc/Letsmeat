@@ -32,3 +32,21 @@ h2{
     
     padding-bottom: 1rem;
 }
+
+@media screen and (max-width: 767px) {
+    .contenu {
+        padding: 0 1rem 0 1rem;
+    }
+    h2 {
+        padding-left: 0rem;
+        padding-right: 0rem;
+        font-size: 1.3rem;
+        Text-Shadow: 1px 1px #637800;
+    }
+    input {
+        font-size: 1rem !important;
+    }
+    .btn {
+        font-size: 0.8rem !important;
+    }
+}

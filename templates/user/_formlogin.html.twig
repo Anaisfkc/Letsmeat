@@ -1,0 +1,20 @@
+{% block  stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/usercss/form.css') }}">
+{% endblock %}
+
+
+<form action="{{ path('login') }}" method="post">
+    <div>
+        <div class="form-group col-md-6">
+            <label for="email">Email :</label>
+            <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="mdp">Mot de passe :</label>
+            <input type="password" class="form-control" id="mdp">
+        </div>
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btnuser" name="submit">Connecte-toi</button>
+        </div>
+    </div>
+</form>

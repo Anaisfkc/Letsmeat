@@ -272,11 +272,14 @@ main {
     }
     .reseau {
         margin-bottom: 1rem;
+        font-size: 0.7rem;
     }
     .cgu {
         margin-bottom: 1rem;
+        font-size: 0.7rem;
     }
     .pdc {
-        margin-bottom: 4rem;
+        margin: 0 0 2rem 0;
+        font-size: 0.7rem;
     }
 }

@@ -56,6 +56,14 @@ class UserController extends Controller
     }
 
     /**
+     * @Route("/confirmation", name="redirectvalid")
+     */
+    public function confirm()
+    {
+        return $this->render('user/redirectvalid.html.twig');
+    }
+
+    /**
      * @Route("/voir-infos/{id}", name="voiruser", methods="GET")
      * @ParamConverter("user", class="App\Entity\User")
      */
@@ -100,6 +108,14 @@ class UserController extends Controller
         }
 
         return $this->redirectToRoute('accueil');
+    }
+
+    /**
+     * @Route("/login", name="login")
+     */
+    public function login()
+    {
+        return $this->render('user/login.html.twig');
     }
 
 }
