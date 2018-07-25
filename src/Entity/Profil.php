@@ -23,43 +23,7 @@ class Profil
     private $id;
 
     /**
-     * 
-     * @ORM\Column(type="array")
-     */
-    private $saveurs;
-
-    /**
-     * 
-     * @ORM\Column(type="array")
-     */
-    private $pratiquefood;
-
-    /**
-     * 
-     * @ORM\Column(type="array")
-     */
-    private $prescriptionfood;
-
-    /**
-     * 
-     * @ORM\Column(type="array")
-     */
-    private $typefood;
-
-    /**
-     * 
-     * @ORM\Column(type="array")
-     */
-    private $recette;
-
-    /**
-     * 
-     * @ORM\Column(type="array")
-     */
-    private $intolerance;
-
-    /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $score;
 
@@ -78,6 +42,157 @@ class Profil
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $sale;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $sucre;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $amer;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $acide;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $epice;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $sucresale;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $vegetalien;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $vegetarien;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $omnivore;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $carnivore;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $halal;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $cacher;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $autre;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $fastfood;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $slowfood;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $bourguignon;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $paella;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $nouille;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $tiepboudien;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $macncheese;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $tajine;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $pouletcurry;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $gluten;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $fruitsdemer;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $oeuf;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $arachide;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $soja;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $lait;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $fruitsacoques;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $autreintolerance;
+
+
     public function __construct()
     {
         $this->reservation = new ArrayCollection();
@@ -90,84 +205,12 @@ class Profil
         return $this->id;
     }
 
-    public function getSaveurs(): ?array
-    {
-        return $this->saveurs;
-    }
-
-    public function setSaveurs(array $saveurs): self
-    {
-        $this->saveurs = $saveurs;
-
-        return $this;
-    }
-
-    public function getPratiquefood(): ?array
-    {
-        return $this->pratiquefood;
-    }
-
-    public function setPratiquefood(array $pratiquefood): self
-    {
-        $this->pratiquefood = $pratiquefood;
-
-        return $this;
-    }
-
-    public function getPrescriptionfood(): ?array
-    {
-        return $this->prescriptionfood;
-    }
-
-    public function setPrescriptionfood(array $prescriptionfood): self
-    {
-        $this->prescriptionfood = $prescriptionfood;
-
-        return $this;
-    }
-
-    public function getTypefood(): ?array
-    {
-        return $this->typefood;
-    }
-
-    public function setTypefood(array $typefood): self
-    {
-        $this->typefood = $typefood;
-
-        return $this;
-    }
-
-    public function getRecette(): ?array
-    {
-        return $this->recette;
-    }
-
-    public function setRecette(array $recette): self
-    {
-        $this->recette = $recette;
-
-        return $this;
-    }
-
-    public function getIntolerance(): ?array
-    {
-        return $this->intolerance;
-    }
-
-    public function setIntolerance(?array $intolerance): self
-    {
-        $this->intolerance = $intolerance;
-
-        return $this;
-    }
-
-    public function getScore(): ?array
+    public function getScore(): ?string
     {
         return $this->score;
     }
 
-    public function setScore(?array $score): self
+    public function setScore(?string $score): self
     {
         $this->score = $score;
 
@@ -248,5 +291,364 @@ class Profil
         return $this;
     }
 
+    public function getSale(): ?bool
+    {
+        return $this->sale;
+    }
+
+    public function setSale(?bool $sale): self
+    {
+        $this->sale = $sale;
+
+        return $this;
+    }
+
+    public function getSucre(): ?bool
+    {
+        return $this->sucre;
+    }
+
+    public function setSucre(?bool $sucre): self
+    {
+        $this->sucre = $sucre;
+
+        return $this;
+    }
+
+    public function getAmer(): ?bool
+    {
+        return $this->amer;
+    }
+
+    public function setAmer(?bool $amer): self
+    {
+        $this->amer = $amer;
+
+        return $this;
+    }
+
+    public function getAcide(): ?bool
+    {
+        return $this->acide;
+    }
+
+    public function setAcide(?bool $acide): self
+    {
+        $this->acide = $acide;
+
+        return $this;
+    }
+
+    public function getEpice(): ?bool
+    {
+        return $this->epice;
+    }
+
+    public function setEpice(?bool $epice): self
+    {
+        $this->epice = $epice;
+
+        return $this;
+    }
+
+    public function getSucresale(): ?bool
+    {
+        return $this->sucresale;
+    }
+
+    public function setSucresale(?bool $sucresale): self
+    {
+        $this->sucresale = $sucresale;
+
+        return $this;
+    }
+
+    public function getVegetalien(): ?bool
+    {
+        return $this->vegetalien;
+    }
+
+    public function setVegetalien(?bool $vegetalien): self
+    {
+        $this->vegetalien = $vegetalien;
+
+        return $this;
+    }
+
+    public function getVegetarien(): ?bool
+    {
+        return $this->vegetarien;
+    }
+
+    public function setVegetarien(?bool $vegetarien): self
+    {
+        $this->vegetarien = $vegetarien;
+
+        return $this;
+    }
+
+    public function getOmnivore(): ?bool
+    {
+        return $this->omnivore;
+    }
+
+    public function setOmnivore(?bool $omnivore): self
+    {
+        $this->omnivore = $omnivore;
+
+        return $this;
+    }
+
+    public function getCarnivore(): ?bool
+    {
+        return $this->carnivore;
+    }
+
+    public function setCarnivore(?bool $carnivore): self
+    {
+        $this->carnivore = $carnivore;
+
+        return $this;
+    }
+
+    public function getHalal(): ?bool
+    {
+        return $this->halal;
+    }
+
+    public function setHalal(?bool $halal): self
+    {
+        $this->halal = $halal;
+
+        return $this;
+    }
+
+    public function getCacher(): ?bool
+    {
+        return $this->cacher;
+    }
+
+    public function setCacher(?bool $cacher): self
+    {
+        $this->cacher = $cacher;
+
+        return $this;
+    }
+
+    public function getAutre(): ?bool
+    {
+        return $this->autre;
+    }
+
+    public function setAutre(?bool $autre): self
+    {
+        $this->autre = $autre;
+
+        return $this;
+    }
+
+    public function getFastfood(): ?bool
+    {
+        return $this->fastfood;
+    }
+
+    public function setFastfood(?bool $fastfood): self
+    {
+        $this->fastfood = $fastfood;
+
+        return $this;
+    }
+
+    public function getSlowfood(): ?bool
+    {
+        return $this->slowfood;
+    }
+
+    public function setSlowfood(?bool $slowfood): self
+    {
+        $this->slowfood = $slowfood;
+
+        return $this;
+    }
+
+    public function getBourguignon(): ?bool
+    {
+        return $this->bourguignon;
+    }
+
+    public function setBourguignon(?bool $bourguignon): self
+    {
+        $this->bourguignon = $bourguignon;
+
+        return $this;
+    }
+
+    public function getPaella(): ?bool
+    {
+        return $this->paella;
+    }
+
+    public function setPaella(?bool $paella): self
+    {
+        $this->paella = $paella;
+
+        return $this;
+    }
+
+    public function getNouille(): ?bool
+    {
+        return $this->nouille;
+    }
+
+    public function setNouille(?bool $nouille): self
+    {
+        $this->nouille = $nouille;
+
+        return $this;
+    }
+
+    public function getTiepboudien(): ?bool
+    {
+        return $this->tiepboudien;
+    }
+
+    public function setTiepboudien(?bool $tiepboudien): self
+    {
+        $this->tiepboudien = $tiepboudien;
+
+        return $this;
+    }
+
+    public function getMacncheese(): ?bool
+    {
+        return $this->macncheese;
+    }
+
+    public function setMacncheese(?bool $macncheese): self
+    {
+        $this->macncheese = $macncheese;
+
+        return $this;
+    }
+
+    public function getTajine(): ?bool
+    {
+        return $this->tajine;
+    }
+
+    public function setTajine(?bool $tajine): self
+    {
+        $this->tajine = $tajine;
+
+        return $this;
+    }
+
+    public function getPouletcurry(): ?bool
+    {
+        return $this->pouletcurry;
+    }
+
+    public function setPouletcurry(?bool $pouletcurry): self
+    {
+        $this->pouletcurry = $pouletcurry;
+
+        return $this;
+    }
+
+    public function getGluten(): ?bool
+    {
+        return $this->gluten;
+    }
+
+    public function setGluten(?bool $gluten): self
+    {
+        $this->gluten = $gluten;
+
+        return $this;
+    }
+
+    public function getFruitsdemer(): ?bool
+    {
+        return $this->fruitsdemer;
+    }
+
+    public function setFruitsdemer(?bool $fruitsdemer): self
+    {
+        $this->fruitsdemer = $fruitsdemer;
+
+        return $this;
+    }
+
+    public function getOeuf(): ?bool
+    {
+        return $this->oeuf;
+    }
+
+    public function setOeuf(?bool $oeuf): self
+    {
+        $this->oeuf = $oeuf;
+
+        return $this;
+    }
+
+    public function getArachide(): ?bool
+    {
+        return $this->arachide;
+    }
+
+    public function setArachide(?bool $arachide): self
+    {
+        $this->arachide = $arachide;
+
+        return $this;
+    }
+
+    public function getSoja(): ?bool
+    {
+        return $this->soja;
+    }
+
+    public function setSoja(?bool $soja): self
+    {
+        $this->soja = $soja;
+
+        return $this;
+    }
+
+    public function getLait(): ?bool
+    {
+        return $this->lait;
+    }
+
+    public function setLait(?bool $lait): self
+    {
+        $this->lait = $lait;
+
+        return $this;
+    }
+
+    public function getFruitsacoques(): ?bool
+    {
+        return $this->fruitsacoques;
+    }
+
+    public function setFruitsacoques(?bool $fruitsacoques): self
+    {
+        $this->fruitsacoques = $fruitsacoques;
+
+        return $this;
+    }
+
+    public function getAutreintolerance(): ?bool
+    {
+        return $this->autreintolerance;
+    }
+
+    public function setAutreintolerance(?bool $autreintolerance): self
+    {
+        $this->autreintolerance = $autreintolerance;
+
+        return $this;
+    }
     
 }

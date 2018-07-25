@@ -96,5 +96,14 @@ class PropositionController extends Controller
         return $this->redirectToRoute('proposition_index');
     }
 
-    
+    /**
+     * @Route("/filpropositions", name="filpropositions")
+     */
+    public function filpropositions(Request $request): Response
+    {
+        $propositions = $this->getDoctrine()
+        ->getRepository(Proposition::class)
+        ->find();
+        return $this->render('proposition/filpropositions.html.twig', ['propositions' => $propositions]);
+    }
 }

@@ -6,45 +6,186 @@
 {{ form_start(form, {'attr':{ 'id': 'profilform', 'novalidate': 'novalidate'}}) }}
     <div class="form-row">
         <div class="form-group col-md-12">
-        {{ form_label(form.saveurs, 'Ta /ou tes saveur(s) préféré(s):') }}
-        {{ form_help(form.saveurs) }}
-        {{ form_widget(form.saveurs, {'attr':{'class': 'form-controlcheck-input', 'value': '1'}}) }}
-        {{ form_errors(form.saveurs) }}
+        <h6>Ta /ou tes saveur(s) préféré(s) :</h6>
+        <p>* Choix unique ou multiples</p>
+            <div class="check">
+            {{ form_widget(form.sale, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.sale) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.sucre, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.sucre) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.amer, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.amer) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.acide, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.acide) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.epice, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.epice) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.sucresale, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.sucresale) }}
+            </div>
         </div>
         
         <div class="form-group col-md-12">
-        {{ form_label(form.pratiquefood, 'Ta /ou tes pratique(s) alimentaire(s) :') }}
-        {{ form_help(form.pratiquefood) }}
-        {{ form_widget(form.pratiquefood, {'attr':{'class': 'form-controlcheck-input'}}) }}
-        {{ form_errors(form.pratiquefood) }}
+        <h6>Ta /ou tes pratique(s) alimentaire(s) :</h6>
+        <p>* Choix unique ou multiples</p>
+
+            <div class="check">
+            {{ form_widget(form.vegetalien, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.vegetalien) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.vegetarien, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.vegetarien) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.omnivore, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.omnivore) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.carnivore, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.carnivore) }}
+            </div>
+
         </div>
 
         <div class="form-group col-md-12">
-        {{ form_label(form.prescriptionfood, 'Ta /ou tes prescription(s) alimentaire(s) :') }}
-        {{ form_help(form.prescriptionfood) }}
-        {{ form_widget(form.prescriptionfood, {'attr':{'class': 'form-controlcheck-input'}}) }}
-        {{ form_errors(form.prescriptionfood) }}
+        <h6>Ta /ou tes prescription(s) alimentaire(s) :</h6>
+        <p>* Choix unique ou multiples</p>
+
+            <div class="check">
+            {{ form_widget(form.halal, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.halal) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.cacher, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.cacher) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.autre, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.autre) }}
+            </div>
         </div>
 
         <div class="form-group col-md-12">
-        {{ form_label(form.typefood, 'Tu es plus fastfood ou slowfood :') }}
-        {{ form_help(form.typefood) }}
-        {{ form_widget(form.typefood, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input'}}) }}
-        {{ form_errors(form.typefood) }}
+        <h6>Tu es plus fastfood ou slowfood :</h6>
+        <p>* Choix unique ou multiples</p>
+
+            <div class="check">
+            {{ form_widget(form.fastfood, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.fastfood) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.slowfood, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.slowfood) }}
+            </div>
+
         </div>
 
         <div class="form-group col-md-12">
-        {{ form_label(form.recette, 'Sélectionne un repas que tu aimes parmis cette liste :') }}
-        {{ form_help(form.recette) }}
-        {{ form_widget(form.recette, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input'}}) }}
-        {{ form_errors(form.recette) }}
+        <h6>Sélectionne un/ou des repas que tu aimes parmis cette liste :</h6>
+        <p>* Choix unique ou multiples</p>
+
+            <div class="check">
+            {{ form_widget(form.bourguignon, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.bourguignon) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.paella, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.paella) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.nouille, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.nouille) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.tiepboudien, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.tiepboudien) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.macncheese, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.macncheese) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.tajine, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.tajine) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.pouletcurry, {'attr':{'type': 'checkbox', 'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.pouletcurry) }}
+            </div>
+
         </div>
 
         <div class="form-group col-md-12">
-        {{ form_label(form.intolerance, 'Ta /ou tes intolérance(s) alimentaire(s), si tu en as :') }}
-        {{ form_help(form.intolerance) }}
-        {{ form_widget(form.intolerance, {'attr':{'class': 'form-controlcheck-input'}}) }}
-        {{ form_errors(form.intolerance) }}
+        <h6>Ta /ou tes intolérance(s) alimentaire(s), si tu en as :</h6>
+        <p>* Choix unique ou multiples</p>
+
+            <div class="check">
+            {{ form_widget(form.gluten, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.gluten) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.fruitsdemer, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.fruitsdemer) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.oeuf, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.oeuf) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.arachide, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.arachide) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.soja, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.soja) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.lait, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.lait) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.fruitsacoques, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.fruitsacoques) }}
+            </div>
+
+            <div class="check">
+            {{ form_widget(form.autreintolerance, {'attr':{'class': 'form-controlcheck-input checkboxes'}}) }}
+            {{ form_label(form.autreintolerance) }}
+            </div>
+
         </div>
 
         <button type="submit" class="btn btnprofil">{{ button_label|default('Valide ton formulaire ici') }}</button>
@@ -52,25 +193,3 @@
     </div>
 </div>
 {{ form_end(form) }}
-
-{# {% block  javascripts %}
-<script>
-    $("#profilform").submit(function () {
-
-        var check = $(this);
-
-        check.find('input[type="checkbox"]').each( function () {
-            var checkbox_this = $(this);
-
-
-            if( checkbox_this.is(":checked") == true ) {
-                checkbox_this.attr('value','1');
-            } else {
-                checkbox_this.prop('checked',true);
-                //DONT' ITS JUST CHECK THE CHECKBOX TO SUBMIT FORM DATA    
-                checkbox_this.attr('value','0');
-            }
-        })
-    })
-</script>
-{% endblock %} #}
