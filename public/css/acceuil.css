@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Exo');
-
 .contenu {
     background-size: cover; 
     padding-left: 5rem;
     padding-right: 5rem;
     color: #425100;
+    height:40rem;
 }
 
 h2{
-    /* font-family: 'Exo', sans-serif; */
-    font-size: 8rem;
+    font-size: 5rem;
     padding-left: 5rem;
     padding-right: 5rem;
     color: #425100;
@@ -22,7 +20,7 @@ h2{
     background-color: #9aaf00;
     color: white;
     font-size: 1.2rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     font-weight: bold;
 }
 

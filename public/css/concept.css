@@ -5,6 +5,8 @@ main {
     height: auto;
     background-color:rgba(250, 226, 84, 0.9); /*#f9e259f2*/
     text-align: left;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .contenu {
@@ -17,6 +19,7 @@ h2{
     padding-left: 5rem;
     color: #425100;
     margin: 0;
+    font-weight: bold;
 }
 
 h4{

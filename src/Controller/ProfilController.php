@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Profil;
-use App\Controller\User;
+use App\Entity\User;
 use App\Form\ProfilType;
 use App\Repository\ProfilRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -43,8 +43,8 @@ class ProfilController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $profil->getUser();
             $em = $this->getDoctrine()->getManager();
+            $profil->setUser($user);
             $em->persist($profil);
             $em->flush();
 
