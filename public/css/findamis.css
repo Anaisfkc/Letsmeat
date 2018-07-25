@@ -13,7 +13,7 @@ h2 {
 }
 
 .btn {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     background-color: #9aaf00;
     color: white;
 }
@@ -29,5 +29,6 @@ h2 {
     }
     .t_input {
         width: 7rem;
+        border-radius: 0.5rem;
     }
 }
