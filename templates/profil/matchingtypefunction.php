@@ -1,8 +1,8 @@
 <?php
 
-function similarity($saveurs, $str2) {
-    $len1 = strlen($str1);
-    $len2 = strlen($str2);
+function similarity($profil_1, $profil_2) {
+    $len1 = strlen($profil_1);
+    $len2 = strlen($profil_2);
     
     $max = max($len1, $len2);
     $similarity = $i = $j = 0;

@@ -11,6 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class ProfilType extends AbstractType
 {
@@ -18,48 +19,77 @@ class ProfilType extends AbstractType
     {   
         
         $builder
-            ->add('saveurs', ChoiceType::class, array(
-                'help' => '*Choix unique ou multiples',
-                'choices'  => array('Sale 🐚' => 'sale', 'Sucre 🍬' => 'sucre' , 'Amer 🍊' => 'amer', 'Acide 🍋' => 'acide', 'Epice 🌶️' => 'epice', 'Sucre/Sale 🍯' => 'sucresale'),
-                'multiple' => true,
-                'expanded' => true,
-            ))
+            ->add('sale', CheckboxType::class, array(
+                'label' => 'Sale 🐚'))
+            ->add('sucre', CheckboxType::class, array(
+                'label' => 'Sucre 🍬'))
+            ->add('amer', CheckboxType::class, array(
+                'label' => 'Amer 🍊'))
+            ->add('acide', CheckboxType::class, array(
+                'label' => 'Acide 🍋'))
+            ->add('epice', CheckboxType::class, array(
+                'label' => 'Epice 🌶️'))
+            ->add('sucresale', CheckboxType::class, array(
+                'label' => 'Sucre/Sale 🍯'))
 
-            ->add('pratiquefood', ChoiceType::class, array(
-                'help' => '*Choix unique ou multiples',
-                'choices'  => array('Vegetalien 🥗' => 'vegetalien', 'Vegetarien 🐟🥑' => 'vegetarien' , 'Omnivore : viandes et legumes 🍗🌽' => 'omnivore', 'Carnivore : viande mais pas trop legumes 🍖🥩' => 'carnivore'),
-                'multiple' => true,
-                'expanded' => true,
-            ))
-            ->add('prescriptionfood', ChoiceType::class, array(
-                'help' => '*Choix unique ou multiples',
-                'choices'  => array('Halal ☪️' => 'halal', 'Cacher ✡️' => 'casher' , 'J\'en ai une mais autre que celles citees 🚩' => 'autre', 'Aucune 🏳️' => 'aucune'),
-                'multiple' => true,
-                'expanded' => true,
-            ))
-            ->add('typefood', ChoiceType::class, array(
-                'help' => '*Choix unique ou multiples',
-                'choices'  => array('Fastfood 🍔' => 'fastfood', 'Slowfood 🍝' => 'slowfood'),
-                'multiple' => true,
-                'expanded' => true,
-            ))
-            ->add('recette', ChoiceType::class, array(
-                'help' => '*Choix unique ou multiples',
-                'choices'  => array('Boeuf Bourguignon 🍲' => 'bourguignon', 'Paëlla 🦐' => 'paella', 'Nouilles Thaï 🍜' => 'nouilles', 'Tiep Bou Dien 🍛' => 'tiep', 'Mac and Cheese 🧀' => 'macncheese', 'Tajine d\'Agneau 🍲' => 'tajine', 'Poulet au Curry 🍗' => 'pouletcurry'),
-                'multiple' => true,
-                'expanded' => true,
-            ))
-            ->add('intolerance', ChoiceType::class, array(
-                'help' => '*Choix unique ou multiples',
-                'choices'  => array('Cereales contenant gluten 🌾' => 'gluten', 'Fruits de mer 🦐' => 'fruitsDeMer', 'Œufs 🥚' => 'oeufs', 'Arachides 🥜' => 'archides', 'Soja 🌱' => 'soja', 'Lait 🥛' => 'lait', 'Fruits à coques 🌰' => 'fruitsCoques', 'J\'en ai une ou plusieurs mais autre que celles citees 🚨' => 'autreIntoler', 'Aucune ✔️' => 'aucune'),
-                'multiple' => true,
-                'expanded' => true,
-            ))
-            ->add('score', HiddenType::class);
-            // ->add('user')
+            ->add('vegetalien', CheckboxType::class, array(
+                'label' => 'Vegetalien 🥗'))
+            ->add('vegetarien', CheckboxType::class, array(
+                'label' => 'Vegetarien 🐟🥑'))
+            ->add('omnivore', CheckboxType::class, array(
+                'label' => 'Omnivore : viandes et legumes 🍗🌽'))
+            ->add('carnivore', CheckboxType::class, array(
+                'label' => 'Carnivore : viande mais pas trop legumes 🍖🥩'))
+
+            ->add('halal', CheckboxType::class, array(
+                'label' => 'Halal ☪️'))
+            ->add('cacher', CheckboxType::class, array(
+                'label' => 'Cacher ✡️'))
+            ->add('autre', CheckboxType::class, array(
+                'label' => 'Une autre que celles citees 🚩'))
+
+            ->add('fastfood', CheckboxType::class, array(
+                'label' => 'Fastfood 🍔'))
+            ->add('slowfood', CheckboxType::class, array(
+                'label' => 'Slowfood 🍝'))
+
+            ->add('bourguignon', CheckboxType::class, array(
+                'label' => 'Boeuf Bourguignon 🍲'))
+            ->add('paella', CheckboxType::class, array(
+                'label' => 'Paëlla 🦐'))
+            ->add('nouille', CheckboxType::class, array(
+                'label' => 'Nouilles Thaï 🍜'))
+            ->add('tiepboudien', CheckboxType::class, array(
+                'label' => 'Tiep Bou Dien 🍛'))
+            ->add('macncheese', CheckboxType::class, array(
+                'label' => 'Mac and Cheese 🧀'))
+            ->add('tajine', CheckboxType::class, array(
+                'label' => 'Tajine d\'Agneau 🍲'))
+            ->add('pouletcurry', CheckboxType::class, array(
+                'label' => 'Poulet au Curry 🍗'))
+
+            ->add('gluten', CheckboxType::class, array(
+                'label' => 'Cereales contenant gluten 🌾'))
+            ->add('fruitsdemer', CheckboxType::class, array(
+                'label' => 'Fruits de mer 🦐'))
+            ->add('oeuf', CheckboxType::class, array(
+                'label' => 'Œufs 🥚'))
+            ->add('arachide', CheckboxType::class, array(
+                'label' => 'Arachides 🥜'))
+            ->add('soja', CheckboxType::class, array(
+                'label' => 'Soja 🌱'))
+            ->add('lait', CheckboxType::class, array(
+                'label' => 'Lait 🥛'))
+            ->add('fruitsacoques', CheckboxType::class, array(
+                'label' => 'Fruits à coques 🌰'))
+            ->add('autreintolerance', CheckboxType::class, array(
+                'label' => 'Une autre que celles citees 🚨'))
+
+            ->add('score', HiddenType::class)
+            ->add('user', HiddenType::class);
     }
 
-    public function setDefaultOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
             'data_class' => Profil::class,

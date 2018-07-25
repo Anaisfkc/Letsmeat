@@ -31,8 +31,8 @@
                 <td>{{ profil.intolerance }}</td>
                 <td>{{ profil.score }}</td>
                 <td>
-                    <a href="{{ path('profil_show', {'id': profil.id}) }}">show</a>
-                    <a href="{{ path('profil_edit', {'id': profil.id}) }}">edit</a>
+                    <a href="{{ path('voirprofil', {'id': profil.id}) }}">show</a>
+                    <a href="{{ path('modifprofil', {'id': profil.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -43,5 +43,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('profil_creer') }}">Create new</a>
+    <a href="{{ path('creerprofil') }}">Create new</a>
 {% endblock %}

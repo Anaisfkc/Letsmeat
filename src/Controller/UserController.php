@@ -9,7 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
  * @Route("/user")
@@ -26,8 +29,9 @@ class UserController extends Controller
         return $this->render('user/index.html.twig', ['users' => $userRepository->findAll()]);
     }
 
+    
     /**
-     * @Route("/inscription", name="inscription-user", methods="GET|POST")
+     * @Route("/inscription", name="inscription", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
@@ -42,7 +46,7 @@ class UserController extends Controller
 
             $data = $form->getData();
 
-            return $this->redirectToRoute('creer-profil');
+            return $this->redirectToRoute('creerprofil');
         }
 
         return $this->render('user/inscription.html.twig', [
@@ -52,15 +56,20 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/voir-informations-personnelles", name="voir-user", methods="GET")
+     * @Route("/voir-infos/{id}", name="voiruser", methods="GET")
+     * @ParamConverter("user", class="App\Entity\User")
      */
     public function show(User $user): Response
     {
-        return $this->render('user/voir-user.html.twig', ['user' => $user]);
+        $response = $this->forward('App\Controller\UserController::user', array(
+            'id'  => $id));
+
+        return $response;
+
     }
 
     /**
-     * @Route("/modifier-informations-personnelles", name="modif-user", methods="GET|POST")
+     * @Route("/modifier-infos", name="modifuser", methods="GET|POST")
      */
     public function edit(Request $request, User $user): Response
     {
@@ -73,7 +82,7 @@ class UserController extends Controller
             return $this->redirectToRoute('voir-user', ['id' => $user->getId()]);
         }
 
-        return $this->render('user/modif-user.html.twig', [
+        return $this->render('user/modifuser.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
@@ -92,23 +101,5 @@ class UserController extends Controller
 
         return $this->redirectToRoute('accueil');
     }
-
-    public function login(Request $request, User $user): Response
-    {
-        $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('voir-user', ['id' => $user->getId()]);
-        }
-
-        return $this->render('user/modif-user.html.twig', [
-            'user' => $user,
-            'form' => $form->createView(),
-        ]);
-    }
-
 
 }

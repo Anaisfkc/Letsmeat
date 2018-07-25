@@ -41,8 +41,8 @@
                 <td>{{ user.ville }}</td>
                 <td>{{ user.cp }}</td>
                 <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                    <a href="{{ path('voiruser', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('modifuser', {'id': user.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -53,5 +53,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('user_inscription') }}">Create new</a>
+    <a href="{{ path('inscription') }}">Create new</a>
 {% endblock %}

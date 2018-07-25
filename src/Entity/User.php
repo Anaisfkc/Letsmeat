@@ -145,7 +145,7 @@ class User
         return $this->id;
     }
 
-    public function getPrenom(): ?__toString
+    public function getPrenom(): ?string
     {
         return $this->prenom;
     }

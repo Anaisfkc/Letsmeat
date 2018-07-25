@@ -3,16 +3,18 @@
 namespace App\Controller;
 
 use App\Entity\Profil;
-use App\Entity\User;
+use App\Controller\User;
 use App\Form\ProfilType;
 use App\Repository\ProfilRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * @Route("/profil")
@@ -31,46 +33,43 @@ class ProfilController extends Controller
 
 
     /**
-     * @Route("/user/voir-user/{user_id}", name = "voir-user")
-     * @ParamConverter("user", options={"id" = "user_id"})
-     * @Method("GET")
-     */
-    /**
-     * @Route("/creer-profil", name="creer-profil", methods="GET|POST")
+     * @Route("/creer-profil", name="creerprofil", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
         $profil = new Profil();
-        $user_id = $this->getUser();
+        $user = $this->getUser();
         $form = $this->createForm (ProfilType::class, $profil);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $profil->getUser();
             $em = $this->getDoctrine()->getManager();
             $em->persist($profil);
             $em->flush();
 
             $data = $form->getData();
 
-            return $this->redirectToRoute('voir-user');
+            return new RedirectResponse($this->generateUrl('voiruser'));
         }
 
         return $this->render('profil/creerprofil.html.twig', [
             'profil' => $profil,
             'form' => $form->createView(),
         ]);
+
     }
 
     /**
-     * @Route("/voir-profil", name="voir-profil", methods="GET")
+     * @Route("/voir-profil", name="voirprofil", methods="GET")
      */
     public function show(Profil $profil): Response
     {
-        return $this->render('profil/voir-profil.html.twig', ['profil' => $profil]);
+        return $this->render('profil/voirprofil.html.twig', ['profil' => $profil]);
     }
 
     /**
-     * @Route("/modifier-profil", name="modif-profil", methods="GET|POST")
+     * @Route("/modifier-profil", name="modifprofil", methods="GET|POST")
      */
     public function edit(Request $request, Profil $profil): Response
     {
@@ -80,7 +79,7 @@ class ProfilController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('voir-profil', ['id' => $profil->getId()]);
+            return $this->redirectToRoute('voirprofil', ['id' => $profil->getId()]);
         }
 
         return $this->render('profil/modifprofil.html.twig', [
