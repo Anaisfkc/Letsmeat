@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche des amis{% endblock %}
+
+{% block  stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/findamis.css') }}">
+{% endblock %}
+
+{% block contenu %}
+<br><br><br>
+<div class="contenu">
+    <h2>Recherche des amis</h2>
+    <form>
+        <div class="input-group mb-3">
+                <input class="t_input" type="text" class="form-control" placeholder="Recherche" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn" type="button" class="btn btn-primary">Rechercher</button>
+            </div>
+        </div>
+        </div>
+        <br><br>
+    </form>
+</div>
+</main>
+{% endblock %}
+
+
+  
+  
