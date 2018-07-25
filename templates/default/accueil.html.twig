@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block  stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/acceuil.css') }}">
+{% endblock %}
+
+{% block contenu %}
+<div class="contenu">
+<br>
+    <h2>Proposer/Réserver</h2><br><br>
+
+    <form>
+        <div id="div1">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recherche" id="text1" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btnacceuil" id="button-addon2">Valider</button>
+                </div>   
+            </div>    
+        </div>
+    </form>
+</div>
+{% endblock %}
